@@ -14,5 +14,8 @@ with open(txt_path, "w") as f:
             f.write('%02X' % (img[i, j, 2]))  # 以固定格式写入,低位为R
             f.write('%02X' % (img[i, j, 1]))
             f.write('%02X' % (img[i, j, 0]))
-            f.write("\n")
+            f.write("\n") 
+
+
+            
 
