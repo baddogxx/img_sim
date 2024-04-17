@@ -13,3 +13,7 @@ debug过程记录  测试1
 ![alt text](md_images/README/image.png)
 
 ## 1位二值化膨胀时序图
+![alt text](md_images/README/image-1.png)
+
+## 1bit像素处理膨胀（左），8bit像素处理膨胀（右）
+![alt text](md_images/README/image-2.png)

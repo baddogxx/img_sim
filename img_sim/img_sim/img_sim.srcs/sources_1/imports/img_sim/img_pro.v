@@ -18,7 +18,7 @@ module img_pro(
     output   reg            img_vs_out    ,    //场同步信号
 	output   reg            img_clken_out ,    //图像数据使能信号
 	output   reg            data_valid_out,    //图像数据有效信号
-    output   reg  [23:0]    img_data_out   //图像数据输出
+    output   reg  [23:0]    img_data_out        //图像数据输出
 );
 
 //灰度输出

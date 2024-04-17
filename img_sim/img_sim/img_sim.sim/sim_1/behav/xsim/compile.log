@@ -8,6 +8,6 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim
 INFO: [VRFC 10-311] analyzing module rgb2yuv
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sim_1/new/tb_top.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_top
-INFO: [VRFC 10-2458] undeclared symbol img_vs_out, assumed default net type wire [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sim_1/new/tb_top.v:206]
-INFO: [VRFC 10-2458] undeclared symbol img_clken_out, assumed default net type wire [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sim_1/new/tb_top.v:207]
-INFO: [VRFC 10-2458] undeclared symbol data_valid_out, assumed default net type wire [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sim_1/new/tb_top.v:208]
+INFO: [VRFC 10-2458] undeclared symbol img_vs_out, assumed default net type wire [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sim_1/new/tb_top.v:210]
+INFO: [VRFC 10-2458] undeclared symbol img_clken_out, assumed default net type wire [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sim_1/new/tb_top.v:211]
+INFO: [VRFC 10-2458] undeclared symbol data_valid_out, assumed default net type wire [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sim_1/new/tb_top.v:212]
