@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
-//Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-//ï¿½ï¿½ï¿½ß£ï¿½xx
-//Ê±ï¿½ä£º2024-3-26
+//Í¼ÏñÅòÕÍ
+//×÷Õß£ºxx
+//Ê±¼ä£º2024-3-26
 
 `timescale 1ns / 1ps
 module dilation(    
@@ -19,28 +19,28 @@ module dilation(
     output  [7:0]  out_data       
 );
 
-//Ê¹ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½
+//Ê¹ÓÃµ¥±ÈÌØÊý¾Ý½øÐÐ´¦Àí
 wire    in_data_1bit ;
 assign  in_data_1bit = in_data[0];
 reg     out_data_1bit;
 assign  out_data = {8{out_data_1bit}};
 
-wire    row1_data_r;      //ï¿½ï¿½shift_ramï¿½ï¿½ï¿½ÕµÄµï¿½Ò»ï¿½Ð»ï¿½ï¿½ï¿½  
-wire    row2_data_r;      //ï¿½Ú¶ï¿½ï¿½ï¿½
+wire    row1_data_r;      //´Óshift_ram½ÓÊÕµÄµÚÒ»ÐÐ»º´æ  
+wire    row2_data_r;      //µÚ¶þÐÐ»º´æ
 
 wire    row1_data;   
 wire    row2_data;
 wire    row3_data;
 
-//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-assign  row1_data = row1_data_r;    //ï¿½ï¿½Ò»ï¿½Ð»ï¿½ï¿½æ£¨ï¿½ï¿½shift_ramï¿½ï¿½È¡ï¿½ï¿½
-assign  row2_data = row2_data_r;    //ï¿½Ú¶ï¿½ï¿½Ð»ï¿½ï¿½æ£¨Ò²ï¿½ï¿½shift_ramï¿½ï¿½È¡ï¿½ï¿½
-assign  row3_data = in_data;        //ï¿½Óµï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½È¡
+//ÈýÐÐÊý¾ÝÁ¬½Ó
+assign  row1_data = row1_data_r;         //µÚÒ»ÐÐ»º´æ£¨´Óshift_ram1»ñÈ¡£©
+assign  row2_data = row2_data_r;         //µÚ¶þÐÐ»º´æ£¨Ò²´Óshift_ram0»ñÈ¡£©
+assign  row3_data = in_data_1bit;        //´Óµ±Ç°ÊäÈë»ñÈ¡
 
-//3*3ï¿½ï¿½ï¿½ï¿½  1_1ï¿½ï¿½ï¿½ï¿½ï¿½Ï½Çµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ 3_3ï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½
+//3*3´°¿Ú  1_1ÊÇ×óÉÏ½ÇµÚÒ»¸öÏñËØ£¬ 3_3ÊÇÓÒÏÂ½Ç×îºóÒ»¸öÏñËØµã
 reg  row1_1, row1_2, row1_3, row2_1, row2_2, row2_3, row3_1, row3_2, row3_3;
 
-reg [1:0] vid;
+reg [1:0] vid;      //ÓÐÐ§ÐÅºÅ
 
 always @(posedge clk or negedge rst_n) begin
     if(!rst_n)
@@ -48,7 +48,7 @@ always @(posedge clk or negedge rst_n) begin
     else
         vid <= {vid[0],in_valid};
 end
-//ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½
+//µÚÒ»¸öÖÜÆÚ ¹¹½¨ÈýÐÐ»º´æ
 always @(posedge clk or negedge rst_n) begin
     if(!rst_n) begin
         row1_1 <= 1'b0; row1_2 <= 1'b0; row1_3 <= 1'b0;
@@ -64,7 +64,7 @@ end
 
 reg mid_out;
 
-//ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//µÚ¶þ¸öÖÜÆÚ£¬Óë²Ù×÷
 always @(posedge clk or negedge rst_n) begin
     if(!rst_n) begin
         out_data_1bit <= 1'b0;
@@ -81,7 +81,7 @@ always @(posedge clk or negedge rst_n) begin
         out_valid <= vid[1];
 end
 
-//ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//¿ØÖÆÐÅºÅÑÓÊ±Á½¸öÊ±ÖÓÖÜÆÚ
 reg [1:0] out_vsync_r;
 reg [1:0] out_clken_r;
 
@@ -100,7 +100,9 @@ assign out_vsync = out_vsync_r;
 assign out_clken = out_clken_r;
 
 
-//ï¿½Ð»ï¿½ï¿½ï¿½Ä£ï¿½ï¿½
+
+
+//ÐÐ»º´æÄ£¿é
 shift_RAM_3X3_1bit ins_shift_RAM_0 (
   .D(in_data_1bit),         // input wire  D
   .CLK(clk),                // input wire CLK
@@ -114,6 +116,10 @@ shift_RAM_3X3_1bit ins_shift_RAM_1(
   .SCLR(~rst_n),            // input wire SCLR
   .Q(row1_data_r)           // output wire  Q
 );
+
+
+
+
 
 endmodule
 

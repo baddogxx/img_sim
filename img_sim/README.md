@@ -1,3 +1,6 @@
+
+
+debug过程记录
 ## 二值化仿真输出时序（无图像输出）
 ![alt text](assets/debug/image-1.png)
 
