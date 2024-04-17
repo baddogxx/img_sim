@@ -9,3 +9,7 @@ debug过程记录  测试1
 
 主要区别在于二值化的j信号没有与index信号一致
 
+## 8位像素膨胀时序图
+![alt text](md_images/README/image.png)
+
+## 1位二值化膨胀时序图

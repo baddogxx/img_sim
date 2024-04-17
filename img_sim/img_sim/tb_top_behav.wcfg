@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="25001000000001fs"></ZoomEndTime>
-      <Cursor1Time time="25001000000000fs"></Cursor1Time>
+      <ZoomEndTime time="18001000000001fs"></ZoomEndTime>
+      <Cursor1Time time="18001000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="251"></NameColumnWidth>
-      <ValueColumnWidth column_width="132"></ValueColumnWidth>
+      <ValueColumnWidth column_width="126"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="11" />
+   <WVObjectSize size="14" />
    <wvobject fp_name="/tb_top/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -63,6 +63,17 @@
    <wvobject fp_name="/tb_top/u_img_pro/ins_dilation/vid" type="array">
       <obj_property name="ElementShortName">vid[1:0]</obj_property>
       <obj_property name="ObjectShortName">vid[1:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/u_img_pro/ins_dilation/row1_data" type="logic">
+      <obj_property name="ElementShortName">row1_data</obj_property>
+      <obj_property name="ObjectShortName">row1_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/u_img_pro/ins_dilation/row2_data" type="logic">
+      <obj_property name="ElementShortName">row2_data</obj_property>
+      <obj_property name="ObjectShortName">row2_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/u_img_pro/ins_dilation/row3_data" type="logic">
+      <obj_property name="ElementShortName">row3_data</obj_property>
+      <obj_property name="ObjectShortName">row3_data</obj_property>
    </wvobject>
 </wave_config>
