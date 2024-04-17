@@ -24,9 +24,6 @@ reg    yuv_clken_d;
 reg    yuv_valid_d;
 reg    monoc;            
 
-assign  bw_vsync        = yuv_vsync_d;
-assign  bw_clken        = yuv_clken_d;
-assign  bw_data_valid   = yuv_valid_d;
 assign  bw_data         = {8{monoc}};  //将monoc复制8次
 
 always @(posedge clk or negedge rst_n) begin
@@ -38,17 +35,29 @@ always @(posedge clk or negedge rst_n) begin
         monoc <= 1'b0;
 end
 
-//延时1拍以同步时钟信号
-always@(posedge clk or negedge rst_n) begin
-    if(!rst_n) begin
-        yuv_vsync_d <= 1'd0;
-        yuv_clken_d <= 1'd0;
-        yuv_valid_d <= 1'd0;
-    end
-    else begin
-        yuv_vsync_d <= yuv_vsync;
-        yuv_clken_d <= yuv_clken;
-        yuv_valid_d <= yuv_valid;
-    end
-end
+
+assign  bw_vsync        = yuv_vsync;
+assign  bw_clken        = yuv_clken;
+assign  bw_data_valid   = yuv_valid;
+
+// assign  bw_vsync        = yuv_vsync_d;
+// assign  bw_clken        = yuv_clken_d;
+// assign  bw_data_valid   = yuv_valid_d;
+
+
+// //延时1拍以同步时钟信号
+// always@(posedge clk or negedge rst_n) begin
+//     if(!rst_n) begin
+//         yuv_vsync_d <= 1'd0;
+//         yuv_clken_d <= 1'd0;
+//         yuv_valid_d <= 1'd0;
+//     end
+//     else begin
+//         yuv_vsync_d <= yuv_vsync;
+//         yuv_clken_d <= yuv_clken;
+//         yuv_valid_d <= yuv_valid;
+//     end
+// end
+
+
 endmodule
