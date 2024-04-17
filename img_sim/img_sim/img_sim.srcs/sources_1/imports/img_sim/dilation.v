@@ -70,7 +70,7 @@ always @(posedge clk or negedge rst_n) begin
         out_data_1bit <= 1'b0;
     end
     else if (vid[1]) begin
-         out_data_1bit <= row1_1 | row1_2 | row1_3 | row2_1 | row2_2 | row2_3 | row3_1 | row3_2 | row3_3;
+         out_data_1bit <= row1_1 || row1_2 || row1_3 || row2_1 || row2_2 || row2_3 || row3_1 || row3_2 || row3_3;
     end
 end
 
