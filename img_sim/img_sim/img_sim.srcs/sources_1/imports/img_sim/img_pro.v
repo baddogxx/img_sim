@@ -39,6 +39,18 @@ wire        dilation_vsync;
 wire        dilation_clken;
 wire        dilation_valid;
 
+//腐蚀输出
+wire [7:0]  erosion_data ;
+wire        erosion_vsync;
+wire        erosion_clken;
+wire        erosion_valid;
+
+//开运算
+wire        open_vsync;
+wire        open_href ;
+wire        open_valid;
+wire [7:0]  open_data ;
+
 //rgb转灰度
 rgb2yuv ins_rgb2yuv(
     .clk        (clk)           ,
@@ -79,12 +91,42 @@ dilation ins_dilation(
 	.in_valid         (bw_valid),
 	.in_data          (bw_data),
 
-
-
     .out_vsync        (dilation_vsync),
 	.out_clken        (dilation_clken),
 	.out_valid        (dilation_valid),
 	.out_data         (dilation_data)
+);
+
+//腐蚀
+erosion u_erosion(
+    .clk       (clk       ),
+    .rst_n     (rst_n     ),
+
+	.in_vsync         (bw_vsync ),
+	.in_clken         (bw_clken ),
+	.in_valid         (bw_valid ),
+	.in_data          (bw_data  ),
+
+    .out_vsync        (erosion_vsync),
+	.out_clken        (erosion_clken),
+	.out_valid        (erosion_valid),
+	.out_data         (erosion_data)
+);
+
+//开运算
+open u_open(
+    .clk       (clk       ),
+    .rst_n     (rst_n     ),
+    
+    .in_vsync  (bw_vsync  ),
+    .in_href   (bw_clken  ),
+    .in_valid  (bw_valid  ),
+    .in_data   (bw_data   ),
+
+    .out_vsync (open_vsync ),
+    .out_href  (open_href  ),
+    .out_valid (open_valid ),
+    .out_data  (open_data  )
 );
 
 // 处理结果输出时序
@@ -94,10 +136,10 @@ always @(posedge clk or negedge rst_n) begin
         data_valid_out  <= 1'b0;
     end
     else  begin        
-        img_data_out    <= {3{dilation_data}};
-        data_valid_out  <=    dilation_valid;
-        img_vs_out      <=    dilation_vsync;
-        img_clken_out   <=    dilation_clken;
+        img_data_out    <= {3{open_data}};
+        data_valid_out  <=    open_valid;
+        img_vs_out      <=    open_vsync;
+        img_clken_out   <=    open_href;
     end
      
 end

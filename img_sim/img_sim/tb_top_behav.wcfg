@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="18000088248435fs"></ZoomStartTime>
-      <ZoomEndTime time="18001182350313fs"></ZoomEndTime>
-      <Cursor1Time time="18001000000000fs"></Cursor1Time>
+      <ZoomStartTime time="3614340000000fs"></ZoomStartTime>
+      <ZoomEndTime time="3649420000001fs"></ZoomEndTime>
+      <Cursor1Time time="3635160000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="251"></NameColumnWidth>
-      <ValueColumnWidth column_width="102"></ValueColumnWidth>
+      <ValueColumnWidth column_width="90"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="2" />
+   <WVObjectSize size="10" />
    <wvobject fp_name="/tb_top/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -27,5 +27,37 @@
    <wvobject fp_name="/tb_top/rst_n" type="logic">
       <obj_property name="ElementShortName">rst_n</obj_property>
       <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/u_img_pro/ins_dilation/in_vsync" type="logic">
+      <obj_property name="ElementShortName">in_vsync</obj_property>
+      <obj_property name="ObjectShortName">in_vsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/u_img_pro/ins_dilation/in_clken" type="logic">
+      <obj_property name="ElementShortName">in_clken</obj_property>
+      <obj_property name="ObjectShortName">in_clken</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/u_img_pro/ins_dilation/in_valid" type="logic">
+      <obj_property name="ElementShortName">in_valid</obj_property>
+      <obj_property name="ObjectShortName">in_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/u_img_pro/ins_dilation/in_data" type="array">
+      <obj_property name="ElementShortName">in_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">in_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/u_img_pro/ins_dilation/out_vsync" type="logic">
+      <obj_property name="ElementShortName">out_vsync</obj_property>
+      <obj_property name="ObjectShortName">out_vsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/u_img_pro/ins_dilation/out_clken" type="logic">
+      <obj_property name="ElementShortName">out_clken</obj_property>
+      <obj_property name="ObjectShortName">out_clken</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/u_img_pro/ins_dilation/out_valid" type="logic">
+      <obj_property name="ElementShortName">out_valid</obj_property>
+      <obj_property name="ObjectShortName">out_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/u_img_pro/ins_dilation/out_data" type="array">
+      <obj_property name="ElementShortName">out_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">out_data[7:0]</obj_property>
    </wvobject>
 </wave_config>

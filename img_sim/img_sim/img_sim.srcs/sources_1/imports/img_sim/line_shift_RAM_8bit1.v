@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module line_shift_RAM_8bit1(
-	input clock,
+	input          clock,
 
 	input          clken,
 	input          per_frame_href,

@@ -32,16 +32,19 @@ wire [7:0] matrix_p31;
 wire [7:0] matrix_p32;
 wire [7:0] matrix_p33;
 
-VIP_matrix_generate u_VIP_matrix_generate(
+matrix_generate3x3 u_matrix_generate3x3(
     .clk                ( clk                ),
     .rst_n              ( rst_n              ),
+
     .per_frame_vsync    ( per_vsync   	 	 ),
     .per_frame_href     ( per_href           ),
     .per_frame_clken    ( per_clken      	 ),
     .per_img_Y          ( pre_data[7:0]      ),
+
     .matrix_frame_vsync ( matrix_frame_vsync ),
     .matrix_frame_href  ( matrix_frame_href  ),
     .matrix_frame_clken ( matrix_frame_clken ),
+    
     .matrix_p11         ( matrix_p11         ),
     .matrix_p12         ( matrix_p12         ),
     .matrix_p13         ( matrix_p13         ),
@@ -68,9 +71,9 @@ always @(posedge clk or negedge rst_n) begin
         add_p3<=12'd0;
     end
     else begin
-      add_p1<=matrix_p11+matrix_p12+matrix_p13;
-      add_p2<=matrix_p21+matrix_p23;
-      add_p3<=matrix_p31+matrix_p32+matrix_p33;
+      add_p1 <= matrix_p11+matrix_p12+matrix_p13;
+      add_p2 <= matrix_p21+matrix_p23;
+      add_p3 <= matrix_p31+matrix_p32+matrix_p33;
     end
 end
 //step2:add all the data
@@ -86,11 +89,12 @@ end
 assign post_data={3{add_all[10:3]}};
 
 //-----------------------------
-//clk signal synchronization
+//信号同步
 //-----------------------------
 reg [1:0] post_clken_dy;
 reg [1:0] post_href_dy;
 reg [1:0] post_vsync_dy;
+
 always @(posedge clk or negedge rst_n) begin
     if(~rst_n)begin
         post_clken_dy<=2'd0;

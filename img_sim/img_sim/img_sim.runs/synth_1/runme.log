@@ -1,0 +1,485 @@
+
+*** Running vivado
+    with args -log img_pro.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source img_pro.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+Sourcing tcl script 'D:/Xilinx/Vivado/2018.3/scripts/Vivado_init.tcl'
+source img_pro.tcl -notrace
+Command: synth_design -top img_pro -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 3920 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 402.512 ; gain = 101.895
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'img_pro' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:9]
+INFO: [Synth 8-6157] synthesizing module 'rgb2yuv' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v:6]
+WARNING: [Synth 8-6014] Unused sequential element rgb_r1_reg was removed.  [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v:61]
+WARNING: [Synth 8-6014] Unused sequential element rgb_r2_reg was removed.  [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v:62]
+WARNING: [Synth 8-6014] Unused sequential element rgb_g1_reg was removed.  [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v:64]
+WARNING: [Synth 8-6014] Unused sequential element rgb_g2_reg was removed.  [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v:65]
+WARNING: [Synth 8-6014] Unused sequential element rgb_b1_reg was removed.  [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v:67]
+WARNING: [Synth 8-6014] Unused sequential element rgb_b2_reg was removed.  [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v:68]
+WARNING: [Synth 8-6014] Unused sequential element yuv_cb0_reg was removed.  [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v:87]
+WARNING: [Synth 8-6014] Unused sequential element yuv_cr0_reg was removed.  [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v:88]
+WARNING: [Synth 8-6014] Unused sequential element yuv_cb1_reg was removed.  [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v:53]
+WARNING: [Synth 8-6014] Unused sequential element yuv_cr1_reg was removed.  [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v:54]
+INFO: [Synth 8-6155] done synthesizing module 'rgb2yuv' (1#1) [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v:6]
+INFO: [Synth 8-6157] synthesizing module 'im2bw' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/im2bw.v:5]
+	Parameter THRESHOLD bound to: 8'b01010000 
+INFO: [Synth 8-6155] done synthesizing module 'im2bw' (2#1) [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/im2bw.v:5]
+INFO: [Synth 8-6157] synthesizing module 'dilation' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/dilation.v:7]
+INFO: [Synth 8-6157] synthesizing module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/matrix_generate3x3.v:4]
+INFO: [Synth 8-6157] synthesizing module 'line_shift_RAM_8bit1' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/line_shift_RAM_8bit1.v:3]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.runs/synth_1/.Xil/Vivado-22712-DESKTOP12700/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (3#1) [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.runs/synth_1/.Xil/Vivado-22712-DESKTOP12700/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'line_shift_RAM_8bit1' (4#1) [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/line_shift_RAM_8bit1.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'matrix_generate3x3' (5#1) [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/matrix_generate3x3.v:4]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p11' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/dilation.v:50]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p12' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/dilation.v:51]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p13' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/dilation.v:52]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p21' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/dilation.v:53]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p22' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/dilation.v:54]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p23' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/dilation.v:55]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p31' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/dilation.v:56]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p32' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/dilation.v:57]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p33' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/dilation.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'dilation' (6#1) [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/dilation.v:7]
+INFO: [Synth 8-6157] synthesizing module 'erosion' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v:7]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p11' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v:51]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p12' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v:52]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p13' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v:53]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p21' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v:54]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p22' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v:55]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p23' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v:56]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p31' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v:57]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p32' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v:58]
+WARNING: [Synth 8-689] width (1) of port connection 'matrix_p33' does not match port width (8) of module 'matrix_generate3x3' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'erosion' (7#1) [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v:7]
+WARNING: [Synth 8-5788] Register img_vs_out_reg in module img_pro is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:121]
+WARNING: [Synth 8-5788] Register img_clken_out_reg in module img_pro is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:122]
+INFO: [Synth 8-6155] done synthesizing module 'img_pro' (8#1) [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:9]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 458.941 ; gain = 158.324
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 458.941 ; gain = 158.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 458.941 ; gain = 158.324
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/u_ram_640x8_0'
+Finished Parsing XDC File [e:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/u_ram_640x8_0'
+Parsing XDC File [e:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/u_ram_640x8_1'
+Finished Parsing XDC File [e:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/u_ram_640x8_1'
+Parsing XDC File [e:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/u_ram_640x8_0'
+Finished Parsing XDC File [e:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/u_ram_640x8_0'
+Parsing XDC File [e:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/u_ram_640x8_1'
+Finished Parsing XDC File [e:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/u_ram_640x8_1'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 790.328 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 790.328 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 790.328 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 790.328 ; gain = 489.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 790.328 ; gain = 489.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/u_ram_640x8_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/u_ram_640x8_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/u_ram_640x8_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/u_ram_640x8_1. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 790.328 ; gain = 489.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 790.328 ; gain = 489.711
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     16 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
++---Registers : 
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 4     
+	               10 Bit    Registers := 8     
+	                8 Bit    Registers := 29    
+	                3 Bit    Registers := 5     
+	                2 Bit    Registers := 12    
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 19    
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module img_pro 
+Detailed RTL Component Info : 
++---Registers : 
+	               24 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
+Module rgb2yuv 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     16 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 4     
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+Module im2bw 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 4     
+Module line_shift_RAM_8bit1__xdcDup__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 4     
+	                8 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+Module matrix_generate3x3__xdcDup__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 10    
+	                2 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 1     
+Module dilation 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
+Module line_shift_RAM_8bit1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 4     
+	                8 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+Module matrix_generate3x3 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 10    
+	                2 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 1     
+Module erosion 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/shiftin_d0_reg[7:0]' into 'ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/shiftin_d0_reg[7:0]' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/line_shift_RAM_8bit1.v:50]
+INFO: [Synth 8-4471] merging register 'u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/shiftin_d1_reg[7:0]' into 'ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/shiftin_d1_reg[7:0]' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/line_shift_RAM_8bit1.v:51]
+INFO: [Synth 8-4471] merging register 'u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/shiftin_d2_reg[7:0]' into 'ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/shiftin_d2_reg[7:0]' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/line_shift_RAM_8bit1.v:52]
+INFO: [Synth 8-4471] merging register 'u_erosion/u_matrix_generate3x3/row3_data_reg[7:0]' into 'ins_dilation/u_matrix_generate3x3/row3_data_reg[7:0]' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/matrix_generate3x3.v:50]
+INFO: [Synth 8-4471] merging register 'u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/ram_rd_addr_d0_reg[9:0]' into 'ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/ram_rd_addr_d0_reg[9:0]' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/line_shift_RAM_8bit1.v:43]
+INFO: [Synth 8-4471] merging register 'u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/ram_rd_addr_d1_reg[9:0]' into 'ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/ram_rd_addr_d1_reg[9:0]' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/line_shift_RAM_8bit1.v:44]
+INFO: [Synth 8-4471] merging register 'u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/ram_rd_addr_d2_reg[9:0]' into 'ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/ram_rd_addr_d2_reg[9:0]' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/line_shift_RAM_8bit1.v:45]
+INFO: [Synth 8-3886] merging instance 'ins_rgb2yuv/rgb_r0_reg[15]' (FDC) to 'ins_rgb2yuv/rgb_g0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_rgb2yuv/rgb_b0_reg[15]' (FDC) to 'ins_rgb2yuv/rgb_g0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_rgb2yuv/rgb_b0_reg[14]' (FDC) to 'ins_rgb2yuv/rgb_g0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_rgb2yuv/rgb_b0_reg[13]' (FDC) to 'ins_rgb2yuv/rgb_g0_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ins_rgb2yuv/rgb_g0_reg[0] )
+INFO: [Synth 8-3886] merging instance 'ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/clken_dly_reg[0]' (FD) to 'u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/clken_dly_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_rgb2yuv/rgb_vsync_d_reg[1]' (FDC) to 'ins_im2bw/yuv_vsync_d_reg'
+INFO: [Synth 8-3886] merging instance 'ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/clken_dly_reg[1]' (FD) to 'u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/clken_dly_reg[1]'
+INFO: [Synth 8-3886] merging instance 'ins_rgb2yuv/rgb_clken_d_reg[1]' (FDC) to 'ins_im2bw/yuv_clken_d_reg'
+INFO: [Synth 8-3886] merging instance 'ins_rgb2yuv/rgb_valid_d_reg[1]' (FDC) to 'ins_im2bw/yuv_valid_d_reg'
+INFO: [Synth 8-3886] merging instance 'ins_rgb2yuv/rgb_vsync_d_reg[2]' (FDC) to 'u_erosion/u_matrix_generate3x3/per_frame_vsync_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_dilation/u_matrix_generate3x3/row3_data_reg[1]' (FDCE) to 'ins_dilation/u_matrix_generate3x3/row3_data_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_dilation/u_matrix_generate3x3/row3_data_reg[2]' (FDCE) to 'ins_dilation/u_matrix_generate3x3/row3_data_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_dilation/u_matrix_generate3x3/row3_data_reg[3]' (FDCE) to 'ins_dilation/u_matrix_generate3x3/row3_data_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_dilation/u_matrix_generate3x3/row3_data_reg[4]' (FDCE) to 'ins_dilation/u_matrix_generate3x3/row3_data_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_dilation/u_matrix_generate3x3/row3_data_reg[5]' (FDCE) to 'ins_dilation/u_matrix_generate3x3/row3_data_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_dilation/u_matrix_generate3x3/row3_data_reg[6]' (FDCE) to 'ins_dilation/u_matrix_generate3x3/row3_data_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_dilation/u_matrix_generate3x3/row3_data_reg[7]' (FDCE) to 'ins_dilation/u_matrix_generate3x3/row3_data_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_rgb2yuv/rgb_clken_d_reg[2]' (FDC) to 'u_erosion/u_matrix_generate3x3/per_frame_href_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_dilation/u_matrix_generate3x3/per_frame_href_r_reg[0]' (FDC) to 'u_erosion/u_matrix_generate3x3/per_frame_href_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_rgb2yuv/rgb_valid_d_reg[2]' (FDC) to 'u_erosion/u_matrix_generate3x3/per_frame_clken_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_dilation/u_matrix_generate3x3/per_frame_clken_r_reg[0]' (FDC) to 'u_erosion/u_matrix_generate3x3/per_frame_clken_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ins_dilation/u_matrix_generate3x3/per_frame_clken_r_reg[1]' (FDC) to 'u_erosion/u_matrix_generate3x3/per_frame_clken_r_reg[1]'
+INFO: [Synth 8-3886] merging instance 'ins_dilation/u_matrix_generate3x3/per_frame_href_r_reg[1]' (FDC) to 'u_erosion/u_matrix_generate3x3/per_frame_href_r_reg[1]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[0]' (FDC) to 'img_data_out_reg[1]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[1]' (FDC) to 'img_data_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[2]' (FDC) to 'img_data_out_reg[3]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[3]' (FDC) to 'img_data_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[4]' (FDC) to 'img_data_out_reg[5]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[5]' (FDC) to 'img_data_out_reg[6]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[6]' (FDC) to 'img_data_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[7]' (FDC) to 'img_data_out_reg[8]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[8]' (FDC) to 'img_data_out_reg[9]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[9]' (FDC) to 'img_data_out_reg[10]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[10]' (FDC) to 'img_data_out_reg[11]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[11]' (FDC) to 'img_data_out_reg[12]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[12]' (FDC) to 'img_data_out_reg[13]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[13]' (FDC) to 'img_data_out_reg[14]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[14]' (FDC) to 'img_data_out_reg[15]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[15]' (FDC) to 'img_data_out_reg[16]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[16]' (FDC) to 'img_data_out_reg[17]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[17]' (FDC) to 'img_data_out_reg[18]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[18]' (FDC) to 'img_data_out_reg[19]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[19]' (FDC) to 'img_data_out_reg[20]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[20]' (FDC) to 'img_data_out_reg[21]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[21]' (FDC) to 'img_data_out_reg[22]'
+INFO: [Synth 8-3886] merging instance 'img_data_out_reg[22]' (FDC) to 'img_data_out_reg[23]'
+INFO: [Synth 8-3886] merging instance 'ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/clken_dly_reg[2]' (FD) to 'u_erosion/u_matrix_generate3x3/u_line_shift_RAM_8bit1/clken_dly_reg[2]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 790.328 ; gain = 489.711
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 795.031 ; gain = 494.414
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 795.258 ; gain = 494.641
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 815.223 ; gain = 514.605
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 815.223 ; gain = 514.605
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 815.223 ; gain = 514.605
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 815.223 ; gain = 514.605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 815.223 ; gain = 514.605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 815.223 ; gain = 514.605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 815.223 ; gain = 514.605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                                   | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|img_pro     | ins_dilation/u_matrix_generate3x3/u_line_shift_RAM_8bit1/shiftin_d2_reg[0] | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|img_pro     | u_erosion/post_vsync_dy_reg[1]                                             | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|img_pro     | data_valid_out_reg                                                         | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------+----------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |blk_mem_gen_0 |         4|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-----------------+------+
+|      |Cell             |Count |
++------+-----------------+------+
+|1     |blk_mem_gen_0    |     1|
+|2     |blk_mem_gen_0__4 |     1|
+|3     |blk_mem_gen_0__5 |     1|
+|4     |blk_mem_gen_0__6 |     1|
+|5     |BUFG             |     1|
+|6     |CARRY4           |    24|
+|7     |LUT1             |     6|
+|8     |LUT2             |    47|
+|9     |LUT3             |    36|
+|10    |LUT4             |    26|
+|11    |LUT5             |     7|
+|12    |LUT6             |     9|
+|13    |SRL16E           |     3|
+|14    |FDCE             |    88|
+|15    |FDRE             |    64|
+|16    |IBUF             |    29|
+|17    |OBUF             |    27|
++------+-----------------+------+
+
+Report Instance Areas: 
++------+-----------------------------+--------------------------------+------+
+|      |Instance                     |Module                          |Cells |
++------+-----------------------------+--------------------------------+------+
+|1     |top                          |                                |   399|
+|2     |  ins_dilation               |dilation                        |    78|
+|3     |    u_matrix_generate3x3     |matrix_generate3x3__xdcDup__1   |    78|
+|4     |      u_line_shift_RAM_8bit1 |line_shift_RAM_8bit1__xdcDup__1 |    77|
+|5     |  ins_im2bw                  |im2bw                           |     6|
+|6     |  ins_rgb2yuv                |rgb2yuv                         |   190|
+|7     |  u_erosion                  |erosion                         |    64|
+|8     |    u_matrix_generate3x3     |matrix_generate3x3              |    54|
+|9     |      u_line_shift_RAM_8bit1 |line_shift_RAM_8bit1            |    29|
++------+-----------------------------+--------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 815.223 ; gain = 514.605
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 815.223 ; gain = 183.219
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 815.223 ; gain = 514.605
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 24 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 816.621 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+82 Infos, 30 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 816.621 ; gain = 520.895
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 816.621 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'E:/git_repositories/img_sim/img_sim/img_sim/img_sim.runs/synth_1/img_pro.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file img_pro_utilization_synth.rpt -pb img_pro_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 18 20:27:26 2024...

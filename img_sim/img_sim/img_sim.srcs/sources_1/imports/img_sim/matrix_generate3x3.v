@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 
-module  VIP_matrix_generate
+module  matrix_generate3x3
 (
 	input				clk,  		
 	input				rst_n,				
@@ -14,6 +14,7 @@ module  VIP_matrix_generate
 	output				matrix_frame_vsync,
 	output				matrix_frame_href,
 	output				matrix_frame_clken,
+
 	output	reg  [7:0]  matrix_p11, 
 	output	reg  [7:0]  matrix_p12,
 	output	reg  [7:0]  matrix_p13,
@@ -66,7 +67,7 @@ line_shift_RAM_8bit1 u_line_shift_RAM_8bit1(
 );
 
 
-//delay 2 tclk
+//延时两个周期
 always@(posedge clk or negedge rst_n) begin
 	if(!rst_n) begin		
 		per_frame_vsync_r <= 0;

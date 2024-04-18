@@ -17,3 +17,6 @@ debug过程记录  测试1
 
 ## 1bit像素处理膨胀（左），8bit像素处理膨胀（右）
 ![alt text](md_images/README/image-2.png)
+
+## 开运算（阈值30，左），开运算（阈值80，右）
+![alt text](md_images/README/image-3.png)
