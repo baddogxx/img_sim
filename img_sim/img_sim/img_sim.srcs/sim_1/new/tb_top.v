@@ -198,20 +198,39 @@ wire [23:0] out_data;
 	            
 
  //Í¼Ïñ´¦ÀíËã·¨
- img_pro u_img_pro(
-	.clk            (clk            ),
-	.rst_n          (rst_n          ),
+//  img_pro u_img_pro(
+// 	.clk            (clk            ),
+// 	.rst_n          (rst_n          ),
 
-	.img_vs_in      (img_vs_in      ),
-	.img_clken_in   (img_clken_in   ),
-	.data_valid_in  (data_valid_in  ),
-	.img_data_in    (img_data_in    ),
+// 	.img_vs_in      (img_vs_in      ),
+// 	.img_clken_in   (img_clken_in   ),
+// 	.data_valid_in  (data_valid_in  ),
+// 	.img_data_in    (img_data_in    ),
 
-	.img_vs_out     (img_vs_out     ),
-	.img_clken_out  (img_clken_out  ),
-	.data_valid_out (data_valid_out ),
-	.img_data_out   (out_data   )
- );
+// 	.img_vs_out     (img_vs_out     ),
+// 	.img_clken_out  (img_clken_out  ),
+// 	.data_valid_out (data_valid_out ),
+// 	.img_data_out   (out_data   )
+//  );
+
+
+
+
+mean_filter u_mean_filter(
+	.clk        (clk        ),
+	.rst_n      (rst_n      ),
+
+	.pre_data   (img_data_in   ),
+	.per_vsync  (img_vs_in  ),
+	.per_href   (img_clken_in   ),
+	.per_clken  (data_valid_in  ),
+
+	.post_data  (out_data  ),
+	.post_vsync (img_vs_out ),
+	.post_href  (img_clken_out  ),
+	.post_clken (data_valid_out )
+);
+
  
 
 reg [31:0] vip_cnt;

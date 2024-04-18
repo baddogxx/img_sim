@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="63816333334fs"></ZoomStartTime>
-      <ZoomEndTime time="65878333335fs"></ZoomEndTime>
-      <Cursor1Time time="64152333000fs"></Cursor1Time>
+      <ZoomStartTime time="18000088248435fs"></ZoomStartTime>
+      <ZoomEndTime time="18001182350313fs"></ZoomEndTime>
+      <Cursor1Time time="18001000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="251"></NameColumnWidth>
-      <ValueColumnWidth column_width="114"></ValueColumnWidth>
+      <ValueColumnWidth column_width="102"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="10" />
+   <WVObjectSize size="2" />
    <wvobject fp_name="/tb_top/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -27,37 +27,5 @@
    <wvobject fp_name="/tb_top/rst_n" type="logic">
       <obj_property name="ElementShortName">rst_n</obj_property>
       <obj_property name="ObjectShortName">rst_n</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/ins_rgb2yuv/rgb_vsync" type="logic">
-      <obj_property name="ElementShortName">rgb_vsync</obj_property>
-      <obj_property name="ObjectShortName">rgb_vsync</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/ins_rgb2yuv/yuv_vsync" type="logic">
-      <obj_property name="ElementShortName">yuv_vsync</obj_property>
-      <obj_property name="ObjectShortName">yuv_vsync</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/ins_rgb2yuv/rgb_clken" type="logic">
-      <obj_property name="ElementShortName">rgb_clken</obj_property>
-      <obj_property name="ObjectShortName">rgb_clken</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/ins_rgb2yuv/yuv_clken" type="logic">
-      <obj_property name="ElementShortName">yuv_clken</obj_property>
-      <obj_property name="ObjectShortName">yuv_clken</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/ins_rgb2yuv/rgb_valid" type="logic">
-      <obj_property name="ElementShortName">rgb_valid</obj_property>
-      <obj_property name="ObjectShortName">rgb_valid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/ins_rgb2yuv/yuv_valid" type="logic">
-      <obj_property name="ElementShortName">yuv_valid</obj_property>
-      <obj_property name="ObjectShortName">yuv_valid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/ins_rgb2yuv/rgb_data" type="array">
-      <obj_property name="ElementShortName">rgb_data[23:0]</obj_property>
-      <obj_property name="ObjectShortName">rgb_data[23:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/ins_rgb2yuv/gray_data" type="array">
-      <obj_property name="ElementShortName">gray_data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">gray_data[7:0]</obj_property>
    </wvobject>
 </wave_config>
