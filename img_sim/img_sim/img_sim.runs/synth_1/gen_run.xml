@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1713443228">
   <File Type="PA-TCL" Name="img_pro.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="img_pro_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="img_pro_reports.tcl"/>
   <File Type="RDS-RDS" Name="img_pro.vds"/>
   <File Type="RDS-UTIL" Name="img_pro_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="img_pro_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="img_pro.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="img_pro_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="img_pro_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/img_sim/dilation.v">
