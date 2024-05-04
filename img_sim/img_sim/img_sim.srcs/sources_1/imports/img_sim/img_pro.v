@@ -136,10 +136,10 @@ always @(posedge clk or negedge rst_n) begin
         data_valid_out  <= 1'b0;
     end
     else  begin        
-        img_data_out    <= {3{open_data}};
-        data_valid_out  <=    open_valid;
-        img_vs_out      <=    open_vsync;
-        img_clken_out   <=    open_href;
+        img_data_out    <= {3{dilation_data}};
+        data_valid_out  <=    dilation_valid;
+        img_vs_out      <=    dilation_vsync;
+        img_clken_out   <=    dilation_clken ;
     end
      
 end

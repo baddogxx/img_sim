@@ -30,13 +30,13 @@ always #20 clk = ~clk;
 initial begin
 
     //分别打开 输入/输出BMP图片，以及输出的Txt文本
-//	iBmpFileId = $fopen("eye_in.bmp","rb");
-//	oBmpFileId = $fopen("eye_out.bmp","wb+");
-//	oTxtFileId = $fopen("eye.txt","w+");
+	iBmpFileId = $fopen("eye_in.bmp","rb");
+	oBmpFileId = $fopen("eye_out.bmp","wb+");
+	oTxtFileId = $fopen("eye.txt","w+");
 
-	 iBmpFileId = $fopen("ten.bmp","rb");
-	 oBmpFileId = $fopen("ten_out.bmp","wb+");
-	 oTxtFileId = $fopen("ten.txt","w+");
+//	 iBmpFileId = $fopen("ten.bmp","rb");
+//	 oBmpFileId = $fopen("ten_out.bmp","wb+");
+//	 oTxtFileId = $fopen("ten.txt","w+");
 
     //将输入BMP图片加载到数组（rBmpData）中
 	iCode = $fread(rBmpData,iBmpFileId);

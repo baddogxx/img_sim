@@ -6,9 +6,9 @@ module line_shift_RAM_8bit1(
 	input          clken,
 	input          per_frame_href,
 	
-	input   [7:0]  shiftin,  //å½“å‰è¡Œçš„æ•°æ®
-	output  [7:0]  taps0x,   //å‰ä¸€è¡Œçš„æ•°æ®
-	output  [7:0]  taps1x    //å‰å‰ä¸€è¡Œçš„æ•°æ®
+	input   [7:0]  shiftin,  //µ±Ç°ĞĞµÄÊı¾İ
+	output  [7:0]  taps0x,   //Ç°Ò»ĞĞµÄÊı¾İ
+	output  [7:0]  taps1x    //Ç°Ç°Ò»ĞĞµÄÊı¾İ
 );
 
 //reg define
@@ -22,7 +22,7 @@ reg  [7:0]  shiftin_d1;
 reg  [7:0]  shiftin_d2;
 reg  [7:0]  taps0x_d0;
 
-//åœ¨æ•°æ®åˆ°æ¥æ—¶ï¼ŒRAMçš„è¯»åœ°å€ç´¯åŠ 
+//ÔÚÊı¾İµ½À´Ê±£¬RAMµÄ¶ÁµØÖ·ÀÛ¼Ó
 always@(posedge clock)begin
 	if(per_frame_href)
 		if(clken)
@@ -33,52 +33,52 @@ always@(posedge clock)begin
 		ram_rd_addr <= 0 ;
 end
 
-//å¯¹æ—¶é’Ÿå»¶è¿Ÿ3æ‹
+//¶ÔÊ±ÖÓÑÓ³Ù3ÅÄ
 always@(posedge clock) begin
 	clken_dly <= { clken_dly[1:0] , clken };
 end
 
-//å°†RAMåœ°å€å»¶è¿Ÿ3æ‹
+//½«RAMµØÖ·ÑÓ³Ù3ÅÄ
 always@(posedge clock ) begin
 	ram_rd_addr_d0 <= ram_rd_addr;
 	ram_rd_addr_d1 <= ram_rd_addr_d0;
 	ram_rd_addr_d2 <= ram_rd_addr_d1;
 end
 
-//è¾“å…¥æ•°æ®å»¶è¿Ÿ3æ‹é€å…¥RAM
+//ÊäÈëÊı¾İÑÓ³Ù3ÅÄËÍÈëRAM
 always@(posedge clock)begin
 	shiftin_d0 <= shiftin;
 	shiftin_d1 <= shiftin_d0;
 	shiftin_d2 <= shiftin_d1;
 end
 
-//ç”¨äºå­˜å‚¨å‰ä¸€è¡Œå›¾åƒçš„RAM
+//ÓÃÓÚ´æ´¢Ç°Ò»ĞĞÍ¼ÏñµÄRAM
 blk_mem_gen_0  u_ram_640x8_0(
   .clka   (clock),
   .wea    (clken_dly[2]),
-  .addra  (ram_rd_addr_d2),     //åœ¨å»¶è¿Ÿçš„ç¬¬ä¸‰ä¸ªæ—¶é’Ÿå‘¨æœŸï¼Œå½“å‰è¡Œçš„æ•°æ®å†™å…¥RAM0
+  .addra  (ram_rd_addr_d2),     //ÔÚÑÓ³ÙµÄµÚÈı¸öÊ±ÖÓÖÜÆÚ£¬µ±Ç°ĞĞµÄÊı¾İĞ´ÈëRAM0
   .dina   (shiftin_d2),
   
   .clkb   (clock),
   .addrb  (ram_rd_addr),    
-  .doutb  (taps0x)              //å»¶è¿Ÿä¸€ä¸ªæ—¶é’Ÿå‘¨æœŸï¼Œè¾“å‡ºRAM0ä¸­å‰ä¸€è¡Œå›¾åƒçš„æ•°æ®
+  .doutb  (taps0x)              //ÑÓ³ÙÒ»¸öÊ±ÖÓÖÜÆÚ£¬Êä³öRAM0ÖĞÇ°Ò»ĞĞÍ¼ÏñµÄÊı¾İ
 );
 
-//å¯„å­˜å‰ä¸€è¡Œå›¾åƒçš„æ•°æ®
+//¼Ä´æÇ°Ò»ĞĞÍ¼ÏñµÄÊı¾İ
 always@(posedge clock)begin
 	taps0x_d0  <= taps0x;
 end
 
-//ç”¨äºå­˜å‚¨å‰å‰ä¸€è¡Œå›¾åƒçš„RAM
+//ÓÃÓÚ´æ´¢Ç°Ç°Ò»ĞĞÍ¼ÏñµÄRAM
 blk_mem_gen_0  u_ram_640x8_1(
 	.clka   (clock),
 	.wea    (clken_dly[1]),
 	.addra  (ram_rd_addr_d1),
-	.dina   (taps0x_d0),       //åœ¨å»¶è¿Ÿçš„ç¬¬äºŒä¸ªæ—¶é’Ÿå‘¨æœŸï¼Œå°†å‰ä¸€è¡Œå›¾åƒçš„æ•°æ®å†™å…¥RAM1
+	.dina   (taps0x_d0),       //ÔÚÑÓ³ÙµÄµÚ¶ş¸öÊ±ÖÓÖÜÆÚ£¬½«Ç°Ò»ĞĞÍ¼ÏñµÄÊı¾İĞ´ÈëRAM1
 
 	.clkb   (clock),
 	.addrb  (ram_rd_addr),
-	.doutb  (taps1x)           //å»¶è¿Ÿä¸€ä¸ªæ—¶é’Ÿå‘¨æœŸï¼Œè¾“å‡ºRAM1ä¸­å‰å‰ä¸€è¡Œå›¾åƒçš„æ•°æ®
+	.doutb  (taps1x)           //ÑÓ³ÙÒ»¸öÊ±ÖÓÖÜÆÚ£¬Êä³öRAM1ÖĞÇ°Ç°Ò»ĞĞÍ¼ÏñµÄÊı¾İ
 );
 
 endmodule
