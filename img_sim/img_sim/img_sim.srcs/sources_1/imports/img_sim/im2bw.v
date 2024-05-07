@@ -17,7 +17,7 @@ module im2bw(
     output  [7:0]       bw_data       
 );
 //¶¨ÒåãÐÖµ
-parameter THRESHOLD = 8'd30;
+parameter THRESHOLD = 8'd80;
 
 reg    yuv_vsync_d;
 reg    yuv_clken_d;
