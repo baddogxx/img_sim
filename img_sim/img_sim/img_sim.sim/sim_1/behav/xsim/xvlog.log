@@ -8,10 +8,10 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim
 INFO: [VRFC 10-311] analyzing module im2bw
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module img_pro
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/line_shift_RAM_8bit1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module line_shift_RAM_8bit1
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/matrix_generate3x3.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module matrix_generate3x3
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/line_shift_RAM_8bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module line_shift_RAM_8bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/matrix_generate_3x3_8bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matrix_generate_3x3_8bit
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/open.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module open
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v" into library xil_defaultlib

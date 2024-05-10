@@ -136,10 +136,10 @@ always @(posedge clk or negedge rst_n) begin
         data_valid_out  <= 1'b0;
     end
     else  begin        
-        img_data_out    <= {3{gray_data}};
-        data_valid_out  <=    yuv_valid;
-        img_vs_out      <=    yuv_vsync;
-        img_clken_out   <=    yuv_clken ;
+        img_data_out    <= {3{dilation_data}};
+        data_valid_out  <=    dilation_valid;
+        img_vs_out      <=    dilation_vsync;
+        img_clken_out   <=    dilation_clken ;
     end
      
 end
