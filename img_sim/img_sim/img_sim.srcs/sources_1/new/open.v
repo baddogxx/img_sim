@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
-//å¼?è¿ç®—ï¼ˆå…ˆè…èš€åè†¨èƒ?ï¼?
-//ä½œè?…ï¼šxx
-//æ—¶é—´ï¼?2024-4-18
+//¿ªÔËËã£¨ÏÈ¸¯Ê´ºóÅòÕÍ£©
+//×÷Õß£ºxx
+//Ê±¼ä£º2024-4-18
 
 
 module open(
@@ -12,26 +12,27 @@ module open(
     input          in_href      ,
     input          in_valid     ,
     input  [7:0]   in_data      ,
+
     output         out_vsync    ,
     output         out_href     ,
     output         out_valid    ,
     output  [7:0]  out_data 
 );
 
-//è…èš€è¾“å‡º
-wire        erosion_ysync ;
+//¸¯Ê´Êä³ö
+wire        erosion_vsync ;
 wire        erosion_href  ;
 wire        erosion_valid ;
 wire [7:0]  erosion_data  ;
 
-//è†¨èƒ€è¾“å‡º
-wire        dilation_vsync ;
-wire        dilation_href  ;
-wire        dilation_valid ;
-wire [7:0]  dilation_data  ;
+// //ÅòÕÍÊä³ö
+// wire        dilation_vsync ;
+// wire        dilation_href  ;
+// wire        dilation_valid ;
+// wire [7:0]  dilation_data  ;
 
 
-//è…èš€ä¾‹åŒ–
+//¸¯Ê´Àı»¯
 erosion u_erosion(
     .clk       (clk       ),
     .rst_n     (rst_n     ),
@@ -41,18 +42,18 @@ erosion u_erosion(
     .in_valid  (in_valid  ),
     .in_data   (in_data   ),
     
-    .out_vsync (erosion_ysync),
+    .out_vsync (erosion_vsync),
     .out_clken (erosion_href ),
     .out_valid (erosion_valid),
     .out_data  (erosion_data )
 );
 
-//è†¨èƒ€ä¾‹åŒ–
+//ÅòÕÍÀı»¯
 dilation u_dilation(
     .clk       (clk       ),
     .rst_n     (rst_n     ),
 
-    .in_vsync  (erosion_ysync),
+    .in_vsync  (erosion_vsync),
     .in_clken  (erosion_href ),
     .in_valid  (erosion_valid),
     .in_data   (erosion_data ),
@@ -62,6 +63,7 @@ dilation u_dilation(
     .out_valid (out_valid),
     .out_data  (out_data )
 );
+
 
 
 endmodule

@@ -27,29 +27,30 @@ wire        yuv_vsync;
 wire        yuv_clken;
 wire        yuv_valid;
 
+//中值滤波输出
+wire [7:0]  median_data ;
+wire        median_vsync;
+wire        median_clken;
+wire        median_valid;
+
 //二值化输出
 wire [7:0]  bw_data;
 wire        bw_vsync;
 wire        bw_clken;
 wire        bw_valid;
 
-//膨胀输出
-wire [7:0]  dilation_data;
-wire        dilation_vsync;
-wire        dilation_clken;
-wire        dilation_valid;
-
-//腐蚀输出
-wire [7:0]  erosion_data ;
-wire        erosion_vsync;
-wire        erosion_clken;
-wire        erosion_valid;
 
 //开运算
 wire        open_vsync;
 wire        open_href ;
 wire        open_valid;
 wire [7:0]  open_data ;
+
+//闭运算
+wire        close_vsync;
+wire        close_href ;
+wire        close_valid;
+wire [7:0]  close_data ;
 
 //rgb转灰度
 rgb2yuv ins_rgb2yuv(
@@ -66,68 +67,78 @@ rgb2yuv ins_rgb2yuv(
     .yuv_clken  (yuv_clken)     ,
     .yuv_valid  (yuv_valid)         
 );
+
+//中值滤波
+median_filter ins_median_filter(
+    .clk            (clk            ),
+    .rst_n          (rst_n          ),
+
+    .pre_gray_vsync (yuv_vsync ),
+    .pe_gray_valid  (yuv_valid ),
+    .pe_gray_clken  (yuv_clken ),
+    .pre_gray_data  (gray_data ),
+
+    .pos_pixel_data (median_data  ),
+    .pos_gray_vsync (median_vsync ),
+    .pos_gray_clken (median_clken ),
+    .pos_gray_valid (median_valid )    
+);
+
+
 //二值化
 im2bw ins_im2bw(
 	.clk               (clk),
 	.rst_n             (rst_n),
                    
-	.yuv_vsync   (yuv_vsync),
-	.yuv_clken   (yuv_clken),
-	.yuv_valid   (yuv_valid),
-	.gray_data   (gray_data),
+	.yuv_vsync   (median_vsync),
+	.yuv_clken   (median_clken),
+	.yuv_valid   (median_valid),
+	.gray_data   (median_data ),
 
     .bw_vsync      (bw_vsync),
 	.bw_clken      (bw_clken),
 	.bw_data_valid (bw_valid),
 	.bw_data       (bw_data)
 );
-//膨胀
-dilation ins_dilation(
-    .clk               (clk),
-	.rst_n             (rst_n),
-                 
-	.in_vsync         (bw_vsync),
-	.in_clken         (bw_clken),
-	.in_valid         (bw_valid),
-	.in_data          (bw_data),
 
-    .out_vsync        (dilation_vsync),
-	.out_clken        (dilation_clken),
-	.out_valid        (dilation_valid),
-	.out_data         (dilation_data)
-);
+//先闭后开
 
-//腐蚀
-erosion u_erosion(
+//1、闭运算
+close ins_close(
     .clk       (clk       ),
     .rst_n     (rst_n     ),
 
-	.in_vsync         (bw_vsync ),
-	.in_clken         (bw_clken ),
-	.in_valid         (bw_valid ),
-	.in_data          (bw_data  ),
-
-    .out_vsync        (erosion_vsync),
-	.out_clken        (erosion_clken),
-	.out_valid        (erosion_valid),
-	.out_data         (erosion_data)
-);
-
-//开运算
-open u_open(
-    .clk       (clk       ),
-    .rst_n     (rst_n     ),
-    
     .in_vsync  (bw_vsync  ),
     .in_href   (bw_clken  ),
     .in_valid  (bw_valid  ),
     .in_data   (bw_data   ),
+
+    .out_vsync (close_vsync ),
+    .out_href  (close_href  ),
+    .out_valid (close_valid ),
+    .out_data  (close_data  )
+);
+
+
+
+//2、开运算
+open ins_open(
+    .clk       (clk       ),
+    .rst_n     (rst_n     ),
+    
+    .in_vsync  (close_vsync  ),
+    .in_href   (close_href  ),
+    .in_valid  (close_valid  ),
+    .in_data   (close_data   ),
 
     .out_vsync (open_vsync ),
     .out_href  (open_href  ),
     .out_valid (open_valid ),
     .out_data  (open_data  )
 );
+
+
+
 
 // 处理结果输出时序
 always @(posedge clk or negedge rst_n) begin
@@ -136,10 +147,10 @@ always @(posedge clk or negedge rst_n) begin
         data_valid_out  <= 1'b0;
     end
     else  begin        
-        img_data_out    <= {3{dilation_data}};
-        data_valid_out  <=    dilation_valid;
-        img_vs_out      <=    dilation_vsync;
-        img_clken_out   <=    dilation_clken ;
+        img_data_out    <= {3{open_data}};
+        data_valid_out  <=    open_valid;
+        img_vs_out      <=    open_vsync;
+        img_clken_out   <=    open_href ;
     end
      
 end

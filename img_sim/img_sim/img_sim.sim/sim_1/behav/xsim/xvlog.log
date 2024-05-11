@@ -1,9 +1,15 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module blk_mem_gen_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/new/Sort3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sort3
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/new/close.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module close
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/dilation.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module dilation
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module erosion
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/new/gray_median_filter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module median_filter
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/im2bw.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module im2bw
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v" into library xil_defaultlib
@@ -12,6 +18,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim
 INFO: [VRFC 10-311] analyzing module line_shift_RAM_8bit
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/matrix_generate_3x3_8bit.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module matrix_generate_3x3_8bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/new/median_3x3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module median_3x3
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/open.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module open
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v" into library xil_defaultlib

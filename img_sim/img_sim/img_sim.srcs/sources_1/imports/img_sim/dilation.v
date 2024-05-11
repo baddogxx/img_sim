@@ -1,7 +1,8 @@
 `timescale 1ns / 1ps
-//Í¼ÏñÅòÕÍ
-//×÷Õß£ºxx
-//Ê±¼ä£º2024-3-26
+//å›¾åƒè†¨èƒ€
+//ä½œè€…ï¼šxx
+//æ—¶é—´ï¼š2024-3-26
+
 
 
 module dilation(
@@ -23,7 +24,7 @@ module dilation(
 wire        matrix_frame_vsync;
 wire        matrix_frame_href;
 wire        matrix_frame_clken;
-wire [7:0]  row1_1; //3X3 ¾ØÕóÊı¾İ
+wire [7:0]  row1_1; 
 wire [7:0]  row1_2; 
 wire [7:0]  row1_3;
 wire [7:0]  row2_1; 
@@ -41,13 +42,13 @@ wire [7:0]  row3_3;
     .clk        (clk), 
     .rst_n      (rst_n),
     
-    //Ô¤´¦Àí»Ò¶ÈÊı¾İ
+    //????????????
     .per_frame_vsync    (in_vsync),
     .per_frame_href     (in_clken), 
     .per_frame_clken    (in_valid),
     .per_img_Y          (in_data ),
     
-    //Êä³ö3x3¾ØÕó
+    //???3x3????
     .matrix_frame_vsync (matrix_frame_vsync),
     .matrix_frame_href  (matrix_frame_href),
     .matrix_frame_clken (matrix_frame_clken),
@@ -62,7 +63,7 @@ wire [7:0]  row3_3;
     .matrix_p33         (row3_3)
 );
 
-//¼ÆËã
+//????
 reg mid;
 
 //step1:add every href
@@ -78,46 +79,26 @@ end
 //
 assign out_data = {8{mid}};
 
-//ĞÅºÅÑÓÊ±Í¬²½
-// reg [1:0] post_clken_dy;
-// reg [1:0] post_href_dy;
-// reg [1:0] post_vsync_dy;
-// always @(posedge clk or negedge rst_n) begin
-//     if(~rst_n)begin
-//         post_clken_dy <=2'd0;
-//         post_href_dy  <=2'd0;
-//         post_vsync_dy <=2'd0;
-//     end
-//     else begin
-//         post_clken_dy<={post_clken_dy[0],matrix_frame_clken};
-//         post_href_dy<={post_href_dy[0],matrix_frame_href};
-//         post_vsync_dy<={post_vsync_dy[0],matrix_frame_vsync};
-//     end
-// end
-// assign out_valid = post_clken_dy[1];
-// assign out_clken  = post_href_dy[1];
-// assign out_vsync = post_vsync_dy[1];
-
-//ÑÓÊ±Ò»¸öÖÜÆÚ
+//ä¿¡å·åŒæ­¥
 reg post_clken_dy;
 reg post_href_dy;
 reg post_vsync_dy;
 
 always @(posedge clk or negedge rst_n) begin
     if (~rst_n) begin
-        // ÖØÖÃÎª 0
+        // ????? 0
         post_clken_dy <= 1'b0;
         post_href_dy <= 1'b0;
         post_vsync_dy <= 1'b0;
     end else begin
-        // ÑÓÊ±Ò»¸öÊ±ÖÓÖÜÆÚ
+        // ?????????????
         post_clken_dy <= matrix_frame_clken;
         post_href_dy  <= matrix_frame_href;
         post_vsync_dy <= matrix_frame_vsync;
     end
 end
 
-// Ö±½Ó´Ó¼Ä´æÆ÷ÖĞÊä³öÑÓÊ±ºóµÄĞÅºÅ
+// ??????????????????????
 assign out_valid = post_clken_dy;
 assign out_clken = post_href_dy;
 assign out_vsync = post_vsync_dy;
@@ -147,7 +128,7 @@ endmodule
 // );
 
 // //-----------------------------
-// //generate 3¡Á3 picture matrix
+// //generate 3??3 picture matrix
 // //-----------------------------
 // wire matrix_frame_clken;
 // wire matrix_frame_href;
@@ -260,20 +241,20 @@ endmodule
 // );
 
 
-// wire    [7:0]   row1_data_r;     //´Óshift_ram½ÓÊÕµÄµÚÒ»ĞĞ»º´æ ÏñËØµãÊı¾İ
+// wire    [7:0]   row1_data_r;     //??shift_ram????????ï¿½ï¿½??? ?????????
 // wire    [7:0]   row2_data_r;
 
-// wire    [7:0]   row1_data;      //3ĞĞ»º´æ
+// wire    [7:0]   row1_data;      //3?ï¿½ï¿½???
 // wire    [7:0]   row2_data;
 // wire    [7:0]   row3_data;
 
-// //ÈıĞĞÊı¾İ´æ´¢
+// //????????ï¿½ï¿½
 // assign  row1_data = row1_data_r;
 // assign  row2_data = row2_data_r;
 // assign  row3_data = in_data;
 
 
-// //3*3´°¿Ú
+// //3*3????
 // reg  [7:0]   row1_1;
 // reg  [7:0]   row1_2;
 // reg  [7:0]   row1_3;
@@ -285,23 +266,23 @@ endmodule
 // reg  [7:0]   row3_3;
 
 
-// reg     [2:0]   vld;    //ÓĞĞ§Öµ  --ÑÓÊ±£¨´ıÑĞ¾¿£©
+// reg     [2:0]   vld;    //??ï¿½ï¿½?  --????????ï¿½ï¿½???
 // always @(posedge clk or negedge rst_n) begin
 //     if(!rst_n)
 //       vld <= 3'b0;
 //     else
-//       vld <= {vld[1:0], in_valid};  //×óÒÆ
+//       vld <= {vld[1:0], in_valid};  //????
 // end
 
 
-// // 0¼¶Á÷Ë® == ÈıĞĞ»º´æ
+// // 0????? == ???ï¿½ï¿½???
 // always @(posedge clk or negedge rst_n) begin
 //     if(!rst_n) begin
 //         row1_1 <= 1'b0; row1_2 <= 1'b0; row1_3 <= 1'b0;
 //         row2_1 <= 1'b0; row2_2 <= 1'b0; row2_3 <= 1'b0;
 //         row3_1 <= 1'b0; row3_2 <= 1'b0; row3_3 <= 1'b0;
 //     end
-//     else if(vld[0]) begin                   //´Óin_data¿ªÊ¼¾Í½øĞĞÁ÷Ë®Ïß´¦Àí£¬Ã»ÓĞµÄ¾Í²¹0£¬Ö±µ½Ä©Î²Êı--> in_data == out_data
+//     else if(vld[0]) begin                   //??in_data????????????????????ï¿½ï¿½???0??????ï¿½ï¿½??--> in_data == out_data
 //         row1_1 <= row1_data;    row1_2 <= row1_1;   row1_3 <= row1_2; 
 //         row2_1 <= row2_data;    row2_2 <= row2_1;   row2_3 <= row2_2;    
 //         row3_1 <= row3_data;    row3_2 <= row3_1;   row3_3 <= row3_2;       
@@ -309,10 +290,10 @@ endmodule
 // end
 
 // //=================================================================
-// //                ÅòÕÍËã·¨Ö÷Ìå²¿·Ö
+// //                ?????????ï¿½ï¿½??
 // //=================================================================
 
-// // Ò»¼¶Á÷Ë® === ¸÷ĞĞ°´Î»»ò
+// // ?????? === ???ï¿½ï¿½?ï¿½ï¿½??
 
 // reg [7:0] p_row1;
 // reg [7:0] p_row2;
@@ -331,7 +312,7 @@ endmodule
 //     end
 // end
 
-// // ¶ş¼¶Á÷Ë® === °´Î»»ò½á¹û
+// // ??????? === ??ï¿½ï¿½????
 // reg [7:0]   p_mid_out;
 // always @(posedge clk or negedge rst_n) begin
 //     if(!rst_n)
@@ -351,7 +332,7 @@ endmodule
 // end
 
 
-// //¿ØÖÆĞÅºÅÑÓÊ±Á½¸öÊ±ÖÓÖÜÆÚ
+// //?????????????????????
 // reg [3:0] out_vsync_r;
 // reg [3:0] out_clken_r;
 
@@ -371,7 +352,7 @@ endmodule
 
 
 
-// //ĞĞ»º´æÄ£¿é
+// //?ï¿½ï¿½??????
 // shift_RAM_3X3_8bit u_shift_RAM_0 (
 //   .D(in_data),              // input wire [7 : 0] D
 //   .CLK(clk),            // input wire CLK
@@ -407,28 +388,28 @@ endmodule
 //     output  [7:0]  out_data       
 // );
 
-// //Ê¹ÓÃµ¥±ÈÌØÊı¾İ½øĞĞ´¦Àí
+// //??????????????ï¿½ï¿½???
 // wire    in_data_1bit ;
 // assign  in_data_1bit = in_data[0];
 // reg     out_data_1bit;
 // assign  out_data = {8{out_data_1bit}};
 
-// wire    row1_data_r;      //´Óshift_ram½ÓÊÕµÄµÚÒ»ĞĞ»º´æ  
-// wire    row2_data_r;      //µÚ¶şĞĞ»º´æ
+// wire    row1_data_r;      //??shift_ram????????ï¿½ï¿½???  
+// wire    row2_data_r;      //????ï¿½ï¿½???
 
 // wire    row1_data;   
 // wire    row2_data;
 // wire    row3_data;
 
-// //ÈıĞĞÊı¾İÁ¬½Ó
-// assign  row1_data = row1_data_r;         //µÚÒ»ĞĞ»º´æ£¨´Óshift_ram1»ñÈ¡£©
-// assign  row2_data = row2_data_r;         //µÚ¶şĞĞ»º´æ£¨Ò²´Óshift_ram0»ñÈ¡£©
-// assign  row3_data = in_data_1bit;        //´Óµ±Ç°ÊäÈë»ñÈ¡
+// //????????????
+// assign  row1_data = row1_data_r;         //????ï¿½ï¿½??ï¿½ï¿½??shift_ram1?????
+// assign  row2_data = row2_data_r;         //????ï¿½ï¿½??ï¿½ï¿½???shift_ram0?????
+// assign  row3_data = in_data_1bit;        //??????????
 
-// //3*3´°¿Ú  1_1ÊÇ×óÉÏ½ÇµÚÒ»¸öÏñËØ£¬ 3_3ÊÇÓÒÏÂ½Ç×îºóÒ»¸öÏñËØµã
+// //3*3????  1_1???????????????? 3_3??????????????????
 // reg  row1_1, row1_2, row1_3, row2_1, row2_2, row2_3, row3_1, row3_2, row3_3;
 
-// reg [1:0] vid;      //ÓĞĞ§ĞÅºÅ
+// reg [1:0] vid;      //??ï¿½ï¿½???
 
 // always @(posedge clk or negedge rst_n) begin
 //     if(!rst_n)
@@ -436,7 +417,7 @@ endmodule
 //     else
 //         vid <= {vid[0],in_valid};
 // end
-// //µÚÒ»¸öÖÜÆÚ ¹¹½¨ÈıĞĞ»º´æ
+// //????????? ???????ï¿½ï¿½???
 // always @(posedge clk or negedge rst_n) begin
 //     if(!rst_n) begin
 //         row1_1 <= 1'b0; row1_2 <= 1'b0; row1_3 <= 1'b0;
@@ -452,7 +433,7 @@ endmodule
 
 // reg mid_out;
 
-// //µÚ¶ş¸öÖÜÆÚ£¬Óë²Ù×÷
+// //???????????????
 // always @(posedge clk or negedge rst_n) begin
 //     if(!rst_n) begin
 //         out_data_1bit <= 1'b0;
@@ -469,7 +450,7 @@ endmodule
 //         out_valid <= vid[1];
 // end
 
-// //¿ØÖÆĞÅºÅÑÓÊ±Á½¸öÊ±ÖÓÖÜÆÚ
+// //?????????????????????
 // reg [2:0] out_vsync_r;
 // reg [2:0] out_clken_r;
 
@@ -487,7 +468,7 @@ endmodule
 // assign out_vsync = out_vsync_r[2];
 // assign out_clken = out_clken_r[2];
 
-// //¿ØÖÆĞÅºÅÑÓÊ±Ò»¸öÖÜÆÚÊä³ö
+// //????????????????????
 // // reg out_vsync_r;
 // // reg out_clken_r;
 
@@ -505,7 +486,7 @@ endmodule
 // // assign out_vsync = out_vsync_r;
 // // assign out_clken = out_clken_r;
 
-// //ĞĞ»º´æÄ£¿é
+// //?ï¿½ï¿½??????
 // shift_RAM_3X3_1bit ins_shift_RAM_0 (
 //   .D(in_data_1bit),         // input wire  D
 //   .CLK(clk),                // input wire CLK
