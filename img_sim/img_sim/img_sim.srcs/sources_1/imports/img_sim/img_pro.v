@@ -142,10 +142,10 @@ connect_domain_get u_connect_domain_get(
     .clk        (clk        ),
     .rst_n      (rst_n      ),
 
-    .fs         (open_vsync ),
-    .hs         (open_href  ),
-    .in_valid   (open_valid ),
-    .data       (open_data  ),
+    .fs         (bw_vsync ),
+    .hs         (bw_clken  ),
+    .in_valid   (bw_valid ),
+    .data       (bw_data  ),
 
     .e_label    (e_label    ),
     .e_le       (e_le       ),
@@ -165,10 +165,10 @@ always @(posedge clk or negedge rst_n) begin
         data_valid_out  <= 1'b0;
     end
     else  begin        
-        img_data_out    <= {3{open_data}};
-        data_valid_out  <=    open_valid;
-        img_vs_out      <=    open_vsync;
-        img_clken_out   <=    open_href ;
+        img_data_out    <= {3{bw_data}};
+        data_valid_out  <=    bw_valid;
+        img_vs_out      <=    bw_vsync;
+        img_clken_out   <=    bw_clken ;
     end
      
 end

@@ -18,56 +18,63 @@ module connect_domain_get(
         output reg [19:0]            e_num_gray
 );
 
-    parameter   HANG_NUM      = 32;
-    parameter   LIE_NUM       = 32;
-    parameter   LIE_UNVALID   = 5;
+    parameter   HANG_NUM      = 480;
+    parameter   LIE_NUM       = 640;
+//    parameter   LIE_UNVALID   = 5;
     parameter   DATA_WIDH     = 8;
     parameter   THRES         = 135;
 
-    reg [10:0] hang_cnt,lie_cnt; reg valid; integer i;
+    reg [9:0] hang_cnt ,lie_cnt ; 
+    reg valid; 
+    integer i;
 //    wire data_valid = (hang_cnt_out > 1) & (hang_cnt_out < HANG_NUM) & (lie_cnt_out > 1) & (lie_cnt_out < LIE_NUM);
 /////////////
 //判断当前像素在第几行 第几列
-
-reg [10:0] row_counter = 0;
-reg [10:0] col_counter = 0;
+reg [10:0] row_counter = 0;     //行计数
+reg [10:0] col_counter = 0;     //列计数
+// 内部状态，记录上一周期的同步信号状态
+reg last_fs, last_hs;
 
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
+        // 复位时清零计数器和状态
         row_counter <= 0;
         col_counter <= 0;
+        last_fs <= 0;
+        last_hs <= 0;
+        hang_cnt <= 0;
+        lie_cnt  <= 0;
     end else begin
-        if (fs) begin
-            // 新帧开始时，行列计数器清零
+        // 更新状态记录
+        last_fs <= fs;
+        last_hs <= hs;
+
+        if (fs && !last_fs) begin
+            // 检测到场同步信号的上升沿
             row_counter <= 0;
             col_counter <= 0;
-        end 
-        else if (hs) begin
-            // 新行开始时，列计数器清零，行计数器递增
+        end else if (hs && !last_hs) begin
+            // 检测到行同步信号的上升沿
             col_counter <= 0;
             row_counter <= row_counter + 1;
-        end 
-        else begin
-            // 普通时钟周期，列计数器递增
+        end else if (hs) begin
+            // 在没有同步信号的普通时钟周期，递增列计数器
             col_counter <= col_counter + 1;
         end
     end
+    hang_cnt <= row_counter-1;
+    lie_cnt  <= col_counter;
+    valid <= in_valid;        
 end
 ///////////////////////////////
-    always @(posedge clk )
-    begin
-        hang_cnt <= row_counter;
-        lie_cnt  <= col_counter;
-        valid <= in_valid;
-    end
-
     
 
     wire [7:0] middle    ;
     wire [7:0] left      ;
     wire [7:0] up_right1 ;
     wire [7:0] up_middle1;
-    wire [7:0] up_left1  ; wire fs_neg,hs_neg;
+    wire [7:0] up_left1  ; 
+    wire fs_neg,hs_neg;
 
     get_around u_get_around(
         .clk         ( clk          ),

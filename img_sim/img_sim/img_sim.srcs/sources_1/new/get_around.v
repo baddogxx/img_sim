@@ -13,17 +13,18 @@ module get_around(
         output [7:0]             up_right1    ,
         output [7:0]             up_middle1   ,
         output [7:0]             up_left1     ,
-        output                   fs_neg       ,
+        output                   fs_neg       ,     //下降沿输出
         output                   hs_neg
     );
 
-    parameter   HANG_NUM      = 640;
-    parameter   LIE_NUM       = 480;
-    parameter   LIE_UNVALID   = 5;
-    parameter   DATA_WIDH     = 8;
-    parameter   THRES         = 135;
+    parameter   HANG_NUM      = 480;        //行
+    parameter   LIE_NUM       = 640;        //列
+    parameter   LIE_UNVALID   = 5;          //每行中的无效像素
+    parameter   DATA_WIDH     = 8;          
+   // parameter   THRES         = 135;        
 
-    reg [4:0] address_w;
+    //address_w在行场信号为高时递增，即每一行的开始递增1
+    reg [9:0] address_w;
     always @(posedge clk or negedge rst_n)
     begin
         if(rst_n==1'b0)
@@ -39,7 +40,7 @@ module get_around(
             address_w <= 0;
     end
 
-    wire wren =fs && hs;
+    wire wren = fs && hs;       //rom写入操作
 
     reg fs_delay[0:(LIE_NUM+LIE_UNVALID-3)];
     reg hs_delay[0:(LIE_NUM+LIE_UNVALID-3)];
@@ -60,11 +61,12 @@ module get_around(
     wire fs_delay_1hang = fs_delay[LIE_NUM+LIE_UNVALID-3];
     wire hs_delay_1hang = hs_delay[LIE_NUM+LIE_UNVALID-3];
 
-    reg [4:0] address_r;
+//address_r在延时一行后的每一行开始递增1
+    reg [9:0] address_r;
 
     always @(posedge clk or negedge rst_n)
     begin
-        if(rst_n==1'b0)
+        if(!rst_n)
             address_r <= 0;
         else if(address_r < (LIE_NUM-1) )
         begin
@@ -77,7 +79,8 @@ module get_around(
             address_r <= 0;
     end
 
-    wire rden0 =fs_delay_1hang && hs_delay_1hang;
+
+    wire rden0 = fs_delay_1hang && hs_delay_1hang;      //延时一行之后的每一帧开始rom读信号拉高
     reg rden1,rden2;
 
     always @(posedge clk )
@@ -87,7 +90,7 @@ module get_around(
     end
 
     wire rden = rden0 | rden1;
-    wire [DATA_WIDH-1:00] data_delay_1hang;
+    wire [7:0] data_delay_1hang;
 
     delay_1hang u_delay_1hang (
       .clka  ( clk                ),    //时钟
@@ -102,12 +105,12 @@ module get_around(
       .doutb ( data_delay_1hang   )     //读数据端口
     );
 
-    wire [DATA_WIDH-1:00] up_middle1_temp = (rden2==1)?data_delay_1hang:0;
+    wire [7:0] up_middle1_temp = (rden2==1) ? data_delay_1hang:0;   //rom读操作有效，取出上一行像素
 
-    wire [DATA_WIDH-1:00] middle_temp = data;
+    wire [7:0] middle_temp = data;                                  //输入像素数据作为暂时的中间像素
 
-
-    reg [DATA_WIDH-1:00] left_temp,left_temp1,up_left1_temp,up_left1_temp1;
+    //左和左上像素
+    reg  [7:0] left_temp,left_temp1,up_left1_temp,up_left1_temp1;
     always @(posedge clk )
     begin
         left_temp  <= middle_temp;
