@@ -3,6 +3,15 @@ Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
 Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 264588a7b93b43a88adcb81fd475c51b --incr --debug typical --relax --mt 32 -L blk_mem_gen_v8_4_2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
 Using 32 slave threads.
 Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 10 for port 'e_label' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:150]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 9 for port 'e_le' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:151]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 9 for port 'e_ri' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:152]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 9 for port 'e_upm' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:153]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 9 for port 'e_dw' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:154]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'e_sum_gray' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:155]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 20 for port 'e_num_gray' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:156]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 10 for port 'addra' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/get_around.v:95]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 10 for port 'addrb' [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/get_around.v:100]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -25,6 +34,13 @@ Compiling module xil_defaultlib.dilation
 Compiling module xil_defaultlib.erosion
 Compiling module xil_defaultlib.close
 Compiling module xil_defaultlib.open
+Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2_output_stage(...
+Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2_output_stage(...
+Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2(C_FAMILY="zyn...
+Compiling module xil_defaultlib.delay_1hang
+Compiling module xil_defaultlib.get_around
+Compiling module xil_defaultlib.connect_domain_get
 Compiling module xil_defaultlib.img_pro
 Compiling module xil_defaultlib.tb_top
 Compiling module xil_defaultlib.glbl

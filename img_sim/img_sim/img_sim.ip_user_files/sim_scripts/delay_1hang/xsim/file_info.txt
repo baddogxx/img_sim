@@ -1,0 +1,2 @@
+delay_1hang.v,verilog,xil_defaultlib,../../../../img_sim.srcs/sources_1/ip/delay_1hang/sim/delay_1hang.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

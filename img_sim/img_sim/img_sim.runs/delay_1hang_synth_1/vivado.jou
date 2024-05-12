@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sun May 12 10:15:26 2024
+# Process ID: 3952
+# Current directory: E:/git_repositories/img_sim/img_sim/img_sim/img_sim.runs/delay_1hang_synth_1
+# Command line: vivado.exe -log delay_1hang.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source delay_1hang.tcl
+# Log file: E:/git_repositories/img_sim/img_sim/img_sim/img_sim.runs/delay_1hang_synth_1/delay_1hang.vds
+# Journal file: E:/git_repositories/img_sim/img_sim/img_sim/img_sim.runs/delay_1hang_synth_1\vivado.jou
+#-----------------------------------------------------------
+source delay_1hang.tcl -notrace

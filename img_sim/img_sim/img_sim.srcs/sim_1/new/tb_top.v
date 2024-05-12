@@ -30,9 +30,9 @@ always #20 clk = ~clk;
 initial begin
 
     //分别打开 输入/输出BMP图片，以及输出的Txt文本
-	iBmpFileId = $fopen("eye2.bmp","rb");
-	oBmpFileId = $fopen("eye_out.bmp","wb+");
-	oTxtFileId = $fopen("eye.txt","w+");	
+	iBmpFileId = $fopen("connect_domain_test.bmp","rb");
+	oBmpFileId = $fopen("sim_out.bmp","wb+");
+	oTxtFileId = $fopen("img.txt","w+");	
 
 	//  iBmpFileId = $fopen("ten.bmp","rb");
 	//  oBmpFileId = $fopen("ten_out.bmp","wb+");

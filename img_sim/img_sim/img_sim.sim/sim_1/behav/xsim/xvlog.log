@@ -1,19 +1,66 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/ip/delay_1hang/sim/delay_1hang.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module delay_1hang
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module blk_mem_gen_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/new/Sort3.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Sort3
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/new/close.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module close
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module connect_domain_get
+WARNING: [VRFC 10-3380] identifier 'combine1_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:165]
+WARNING: [VRFC 10-3380] identifier 'combine1_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:166]
+WARNING: [VRFC 10-3380] identifier 'combine1_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:167]
+WARNING: [VRFC 10-3380] identifier 'combine1_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:168]
+WARNING: [VRFC 10-3380] identifier 'combine1_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:170]
+WARNING: [VRFC 10-3380] identifier 'combine1_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:171]
+WARNING: [VRFC 10-3380] identifier 'combine1_b' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:172]
+WARNING: [VRFC 10-3380] identifier 'combine1_b' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:176]
+WARNING: [VRFC 10-3380] identifier 'combine1_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:177]
+WARNING: [VRFC 10-3380] identifier 'combine1_b' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:178]
+WARNING: [VRFC 10-3380] identifier 'combine1_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:179]
+WARNING: [VRFC 10-3380] identifier 'combine1_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:182]
+WARNING: [VRFC 10-3380] identifier 'combine1_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:183]
+WARNING: [VRFC 10-3380] identifier 'combine2_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:187]
+WARNING: [VRFC 10-3380] identifier 'combine2_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:188]
+WARNING: [VRFC 10-3380] identifier 'combine2_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:189]
+WARNING: [VRFC 10-3380] identifier 'combine2_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:190]
+WARNING: [VRFC 10-3380] identifier 'combine2_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:192]
+WARNING: [VRFC 10-3380] identifier 'combine2_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:193]
+WARNING: [VRFC 10-3380] identifier 'combine2_b' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:194]
+WARNING: [VRFC 10-3380] identifier 'combine2_b' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:198]
+WARNING: [VRFC 10-3380] identifier 'combine2_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:199]
+WARNING: [VRFC 10-3380] identifier 'combine2_b' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:200]
+WARNING: [VRFC 10-3380] identifier 'combine2_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:201]
+WARNING: [VRFC 10-3380] identifier 'combine2_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:204]
+WARNING: [VRFC 10-3380] identifier 'combine2_l' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:205]
+WARNING: [VRFC 10-3380] identifier 'export_valid' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:288]
+WARNING: [VRFC 10-3380] identifier 'cnt_write' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:290]
+WARNING: [VRFC 10-3380] identifier 'cnt_write' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:291]
+WARNING: [VRFC 10-3380] identifier 'cnt_write' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:292]
+WARNING: [VRFC 10-3380] identifier 'cnt_write' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:293]
+WARNING: [VRFC 10-3380] identifier 'cnt_write' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:294]
+WARNING: [VRFC 10-3380] identifier 'cnt_write' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:295]
+WARNING: [VRFC 10-3380] identifier 'cnt_write' is used before its declaration [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_domain.v:296]
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/dilation.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module dilation
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module erosion
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/get_around.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module get_around
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/new/gray_median_filter.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module median_filter
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/im2bw.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module im2bw
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module img_pro
+INFO: [VRFC 10-2458] undeclared symbol e_label, assumed default net type wire [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:150]
+INFO: [VRFC 10-2458] undeclared symbol e_le, assumed default net type wire [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:151]
+INFO: [VRFC 10-2458] undeclared symbol e_ri, assumed default net type wire [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:152]
+INFO: [VRFC 10-2458] undeclared symbol e_upm, assumed default net type wire [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:153]
+INFO: [VRFC 10-2458] undeclared symbol e_dw, assumed default net type wire [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:154]
+INFO: [VRFC 10-2458] undeclared symbol e_sum_gray, assumed default net type wire [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:155]
+INFO: [VRFC 10-2458] undeclared symbol e_num_gray, assumed default net type wire [E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v:156]
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/line_shift_RAM_8bit.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module line_shift_RAM_8bit
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/matrix_generate_3x3_8bit.v" into library xil_defaultlib

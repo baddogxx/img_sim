@@ -137,6 +137,24 @@ open ins_open(
     .out_data  (open_data  )
 );
 
+//Á¬Í¨Óò
+connect_domain_get u_connect_domain_get(
+    .clk        (clk        ),
+    .rst_n      (rst_n      ),
+
+    .fs         (open_vsync ),
+    .hs         (open_href  ),
+    .in_valid   (open_valid ),
+    .data       (open_data  ),
+
+    .e_label    (e_label    ),
+    .e_le       (e_le       ),
+    .e_ri       (e_ri       ),
+    .e_upm      (e_upm      ),
+    .e_dw       (e_dw       ),
+    .e_sum_gray (e_sum_gray ),
+    .e_num_gray (e_num_gray )
+);
 
 
 
