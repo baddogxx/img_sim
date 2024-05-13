@@ -13,6 +13,7 @@ verilog xil_defaultlib  \
 "../../../../img_sim.srcs/sources_1/imports/img_sim/img_pro.v" \
 "../../../../img_sim.srcs/sources_1/new/line_shift_RAM_8bit.v" \
 "../../../../img_sim.srcs/sources_1/new/matrix_generate_3x3_8bit.v" \
+"../../../../img_sim.srcs/sources_1/new/max_domain.v" \
 "../../../../img_sim.srcs/sources_1/imports/new/median_3x3.v" \
 "../../../../img_sim.srcs/sources_1/new/open.v" \
 "../../../../img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v" \

@@ -52,6 +52,12 @@ wire        close_href ;
 wire        close_valid;
 wire [7:0]  close_data ;
 
+//叠加
+wire         add_vsync;
+wire         add_href ;
+wire         add_valid;
+wire [23:0]  add_data ;
+
 //rgb转灰度
 rgb2yuv ins_rgb2yuv(
     .clk        (clk)           ,
@@ -137,24 +143,30 @@ open ins_open(
     .out_data  (open_data  )
 );
 
-//连通域
-connect_domain_get u_connect_domain_get(
-    .clk        (clk        ),
-    .rst_n      (rst_n      ),
+//最大连通域标记
+max_domain u_max_domain(
+    .clk       (clk       ),
+    .rst_n     (rst_n     ),
 
-    .fs         (bw_vsync ),
-    .hs         (bw_clken  ),
-    .in_valid   (bw_valid ),
-    .data       (bw_data  ),
+    .tem_vsync (bw_vsync ),       //开运算结果送入连通检测模块
+    .tem_href  (bw_clken  ),       
+    .tem_valid (bw_valid ),       
+    .tem_data  (bw_data  ),       
 
-    .e_label    (e_label    ),
-    .e_le       (e_le       ),
-    .e_ri       (e_ri       ),
-    .e_upm      (e_upm      ),
-    .e_dw       (e_dw       ),
-    .e_sum_gray (e_sum_gray ),
-    .e_num_gray (e_num_gray )
+    .in_vsync  (yuv_vsync ),        //待叠加的灰度图像输入
+    .in_valid  (yuv_valid ),
+    .in_href   (yuv_clken ),
+    .in_data   (gray_data ),
+
+    .out_vsync (out_vsync ),
+    .out_valid (out_valid ),
+    .out_href  (out_href  ),
+    .out_data  (out_data  ),
+
+    .center_x  (center_x  ),
+    .center_y  (center_y  )
 );
+
 
 
 
@@ -165,10 +177,11 @@ always @(posedge clk or negedge rst_n) begin
         data_valid_out  <= 1'b0;
     end
     else  begin        
-        img_data_out    <= {3{bw_data}};
-        data_valid_out  <=    bw_valid;
-        img_vs_out      <=    bw_vsync;
-        img_clken_out   <=    bw_clken ;
+        img_vs_out      <=    add_vsync ;
+        img_clken_out   <=    add_href  ;
+        data_valid_out  <=    add_valid ;
+        img_data_out    <=    add_data  ;
+        //img_data_out    <= {3{bw_data}};
     end
      
 end

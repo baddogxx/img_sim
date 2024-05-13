@@ -3,10 +3,11 @@
 Dec  7 2018
 00:33:28
 E:/git_repositories/img_sim/img_sim/img_sim/img_sim.sim/sim_1/behav/xsim/glbl.v,1713313360,verilog,,,,glbl,,,,,,,,
+E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sim_1/imports/connect_domain_get/max_domain_tb.v,1715575716,verilog,,,,tb_max_domain,,,,,,,,
 E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sim_1/new/tb_top.v,1715498638,verilog,,,,tb_top,,,,,,,,
 E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/dilation.v,1715306179,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v,,dilation,,,,,,,,
-E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/im2bw.v,1715324152,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v,,im2bw,,,,,,,,
-E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v,1715498203,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/line_shift_RAM_8bit.v,,img_pro,,,,,,,,
+E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/im2bw.v,1715584550,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v,,im2bw,,,,,,,,
+E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/img_pro.v,1715599460,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/line_shift_RAM_8bit.v,,img_pro,,,,,,,,
 E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/matrix_generate3x3.v,1713425997,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/matrix_generate_3x3_8bit.v,,matrix_generate3x3,,,,,,,,
 E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/mean_filter.v,1713426335,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sim_1/new/tb_top.v,,mean_filter,,,,,,,,
 E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v,1713407579,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sim_1/new/tb_top.v,,rgb2yuv,,,,,,,,
@@ -22,5 +23,6 @@ E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/connect_d
 E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/erosion.v,1715308169,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/get_around.v,,erosion,,,,,,,,
 E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/get_around.v,1715511720,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/new/gray_median_filter.v,,get_around,,,,,,,,
 E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/line_shift_RAM_8bit.v,1715248166,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/matrix_generate_3x3_8bit.v,,line_shift_RAM_8bit,,,,,,,,
-E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/matrix_generate_3x3_8bit.v,1715255571,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/new/median_3x3.v,,matrix_generate_3x3_8bit,,,,,,,,
+E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/matrix_generate_3x3_8bit.v,1715255571,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/max_domain.v,,matrix_generate_3x3_8bit,,,,,,,,
+E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/max_domain.v,1715592218,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/new/median_3x3.v,,max_domain,,,,,,,,
 E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/new/open.v,1715324500,verilog,,E:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/imports/img_sim/rgb2yuv.v,,open,,,,,,,,
