@@ -130,15 +130,32 @@ always @(posedge clk or negedge rst_n) begin
     end
 end
 
+// //叠加红色矩形
+// always @(posedge clk or negedge rst_n) begin
+//     if (!rst_n) begin
+//         out_data  <= 8'b0;
+//     end 
+//     else begin
+//         if ((hang_cnt == out_up) || (hang_cnt == out_dowm)) begin
+//             out_data <= 24'hFF0000;     //输出红色像素
+//         end else if ((lie_cnt == out_left) || (lie_cnt == out_right)) begin
+//             out_data <= 24'hFF0000;     //输出红色像素
+//         end
+//         else begin
+//         out_data  <= {3{in_data}};
+//         end
+//     end 
+// end
+
 //叠加红色矩形
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         out_data  <= 8'b0;
     end 
     else begin
-        if ((hang_cnt == out_up) || (hang_cnt == out_dowm)) begin
+        if ((hang_cnt == 100) || (hang_cnt == 100)) begin
             out_data <= 24'hFF0000;     //输出红色像素
-        end else if ((lie_cnt == out_left) || (lie_cnt == out_right)) begin
+        end else if ((lie_cnt == 100) || (lie_cnt == 100)) begin
             out_data <= 24'hFF0000;     //输出红色像素
         end
         else begin

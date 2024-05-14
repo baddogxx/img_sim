@@ -158,10 +158,10 @@ max_domain u_max_domain(
     .in_href   (yuv_clken ),
     .in_data   (gray_data ),
 
-    .out_vsync (out_vsync ),
-    .out_valid (out_valid ),
-    .out_href  (out_href  ),
-    .out_data  (out_data  ),
+    .out_vsync (add_vsync ),
+    .out_valid (add_valid ),
+    .out_href  (add_href  ),
+    .out_data  (add_data  ),
 
     .center_x  (center_x  ),
     .center_y  (center_y  )
