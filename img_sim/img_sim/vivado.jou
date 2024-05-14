@@ -2,28 +2,82 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Mon Apr 15 21:57:51 2024
-# Process ID: 1448
-# Current directory: C:/Users/25210/Desktop/img_sim/img_sim/img_sim
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1948 C:\Users\25210\Desktop\img_sim\img_sim\img_sim\img_sim.xpr
-# Log file: C:/Users/25210/Desktop/img_sim/img_sim/img_sim/vivado.log
-# Journal file: C:/Users/25210/Desktop/img_sim/img_sim/img_sim\vivado.jou
+# Start of session at: Mon May 13 22:10:02 2024
+# Process ID: 21328
+# Current directory: C:/Users/25210/Desktop/img_sim_fast/img_sim/img_sim
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21696 C:\Users\25210\Desktop\img_sim_fast\img_sim\img_sim\img_sim.xpr
+# Log file: C:/Users/25210/Desktop/img_sim_fast/img_sim/img_sim/vivado.log
+# Journal file: C:/Users/25210/Desktop/img_sim_fast/img_sim/img_sim\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/25210/Desktop/img_sim/img_sim/img_sim/img_sim.xpr
+open_project C:/Users/25210/Desktop/img_sim_fast/img_sim/img_sim/img_sim.xpr
 update_compile_order -fileset sources_1
 launch_simulation
-open_wave_config C:/Users/25210/Desktop/img_sim/img_sim/img_sim/tb_top_behav.wcfg
+open_wave_config C:/Users/25210/Desktop/img_sim_fast/img_sim/img_sim/tb_top_behav.wcfg
 source tb_top.tcl
-current_wave_config {tb_top_behav.wcfg}
-add_wave {{/tb_top/u_img_pro/ins_dilation/row1_data_r}} 
-current_wave_config {tb_top_behav.wcfg}
-add_wave {{/tb_top/u_img_pro/ins_dilation/row2_data_r}} 
 relaunch_sim
 run 18 ms
 current_wave_config {tb_top_behav.wcfg}
-add_wave {{/tb_top/u_img_pro/ins_dilation/in_data_1bit}} 
-current_wave_config {tb_top_behav.wcfg}
-add_wave {{/tb_top/u_img_pro/ins_dilation/out_data_1bit}} 
+add_wave {{/tb_top/u_img_pro/u_max_domain/hang_cnt}} 
 relaunch_sim
 run 18 ms
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/u_img_pro/u_max_domain/row_counter}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/u_img_pro/u_max_domain/col_counter}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/u_img_pro/u_max_domain/lie_cnt}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/u_img_pro/u_max_domain/last_vsync}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/u_img_pro/u_max_domain/last_href}} 
+relaunch_sim
+run 18 ms
+relaunch_sim
+run 18 ms
+relaunch_sim
+relaunch_sim
+run 18 ms
+relaunch_sim
+relaunch_sim
+run 18 ms
+relaunch_sim
+run 18 ms
+relaunch_sim
+run 18 ms
+relaunch_sim
+run 18 ms
+relaunch_sim
+run 18 ms
+relaunch_sim
+run 18 ms
+relaunch_sim
+run 18 ms
+relaunch_sim
+run 18 ms
+update_compile_order -fileset sources_1
+relaunch_sim
+save_wave_config {C:/Users/25210/Desktop/img_sim_fast/img_sim/img_sim/tb_top_behav.wcfg}
+run 35 ms
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/u_img_pro/u_max_domain/out_up}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/u_img_pro/u_max_domain/out_dowm}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/u_img_pro/u_max_domain/out_left}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/u_img_pro/u_max_domain/out_right}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/u_img_pro/u_max_domain/pixel_num}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/u_img_pro/u_max_domain/tem_vsync}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/u_img_pro/u_max_domain/tem_href}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/u_img_pro/u_max_domain/tem_valid}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/u_img_pro/u_max_domain/tem_data}} 
+relaunch_sim
+run 35 ms
+save_wave_config {C:/Users/25210/Desktop/img_sim_fast/img_sim/img_sim/tb_top_behav.wcfg}
+close_sim

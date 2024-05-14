@@ -27,11 +27,6 @@ wire        yuv_vsync;
 wire        yuv_clken;
 wire        yuv_valid;
 
-//中值滤波输出
-wire [7:0]  median_data ;
-wire        median_vsync;
-wire        median_clken;
-wire        median_valid;
 
 //二值化输出
 wire [7:0]  bw_data;
@@ -39,18 +34,6 @@ wire        bw_vsync;
 wire        bw_clken;
 wire        bw_valid;
 
-
-//开运算
-wire        open_vsync;
-wire        open_href ;
-wire        open_valid;
-wire [7:0]  open_data ;
-
-//闭运算
-wire        close_vsync;
-wire        close_href ;
-wire        close_valid;
-wire [7:0]  close_data ;
 
 //叠加
 wire         add_vsync;
@@ -74,21 +57,6 @@ rgb2yuv ins_rgb2yuv(
     .yuv_valid  (yuv_valid)         
 );
 
-//中值滤波
-median_filter ins_median_filter(
-    .clk            (clk            ),
-    .rst_n          (rst_n          ),
-
-    .pre_gray_vsync (yuv_vsync ),
-    .pe_gray_valid  (yuv_valid ),
-    .pe_gray_clken  (yuv_clken ),
-    .pre_gray_data  (gray_data ),
-
-    .pos_pixel_data (median_data  ),
-    .pos_gray_vsync (median_vsync ),
-    .pos_gray_clken (median_clken ),
-    .pos_gray_valid (median_valid )    
-);
 
 
 //二值化
@@ -96,10 +64,10 @@ im2bw ins_im2bw(
 	.clk               (clk),
 	.rst_n             (rst_n),
                    
-	.yuv_vsync   (median_vsync),
-	.yuv_clken   (median_clken),
-	.yuv_valid   (median_valid),
-	.gray_data   (median_data ),
+	.yuv_vsync   (yuv_vsync),
+	.yuv_clken   (yuv_clken),
+	.yuv_valid   (yuv_valid),
+	.gray_data   (gray_data ),
 
     .bw_vsync      (bw_vsync),
 	.bw_clken      (bw_clken),
@@ -107,41 +75,6 @@ im2bw ins_im2bw(
 	.bw_data       (bw_data)
 );
 
-//先闭后开
-
-//1、闭运算
-close ins_close(
-    .clk       (clk       ),
-    .rst_n     (rst_n     ),
-
-    .in_vsync  (bw_vsync  ),
-    .in_href   (bw_clken  ),
-    .in_valid  (bw_valid  ),
-    .in_data   (bw_data   ),
-
-    .out_vsync (close_vsync ),
-    .out_href  (close_href  ),
-    .out_valid (close_valid ),
-    .out_data  (close_data  )
-);
-
-
-
-//2、开运算
-open ins_open(
-    .clk       (clk       ),
-    .rst_n     (rst_n     ),
-    
-    .in_vsync  (close_vsync  ),
-    .in_href   (close_href  ),
-    .in_valid  (close_valid  ),
-    .in_data   (close_data   ),
-
-    .out_vsync (open_vsync ),
-    .out_href  (open_href  ),
-    .out_valid (open_valid ),
-    .out_data  (open_data  )
-);
 
 //最大连通域标记
 max_domain u_max_domain(
@@ -158,10 +91,10 @@ max_domain u_max_domain(
     .in_href   (yuv_clken ),
     .in_data   (gray_data ),
 
-    .out_vsync (out_vsync ),
-    .out_valid (out_valid ),
-    .out_href  (out_href  ),
-    .out_data  (out_data  ),
+    .out_vsync (add_vsync ),
+    .out_valid (add_valid ),
+    .out_href  (add_href  ),
+    .out_data  (add_data  ),
 
     .center_x  (center_x  ),
     .center_y  (center_y  )
@@ -181,7 +114,11 @@ always @(posedge clk or negedge rst_n) begin
         img_clken_out   <=    add_href  ;
         data_valid_out  <=    add_valid ;
         img_data_out    <=    add_data  ;
-        //img_data_out    <= {3{bw_data}};
+
+        // img_vs_out      <=    bw_vsync ;
+        // img_clken_out   <=    bw_clken  ; 
+        // data_valid_out  <=    bw_valid ;
+        // img_data_out    <= {3{bw_data}};
     end
      
 end

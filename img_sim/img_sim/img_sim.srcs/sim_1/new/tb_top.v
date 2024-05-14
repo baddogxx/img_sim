@@ -30,7 +30,7 @@ always #20 clk = ~clk;
 initial begin
 
     //分别打开 输入/输出BMP图片，以及输出的Txt文本
-	iBmpFileId = $fopen("connect_domain_test.bmp","rb");
+	iBmpFileId = $fopen("connect_domain_test_rgb.bmp","rb");
 	oBmpFileId = $fopen("sim_out.bmp","wb+");
 	oTxtFileId = $fopen("img.txt","w+");	
 
@@ -246,6 +246,9 @@ always@(posedge clk or negedge rst_n)begin
             vip_pixel_data[vip_cnt+0] <= out_data[23: 16];
             vip_pixel_data[vip_cnt+1] <= out_data[15 : 8];
             vip_pixel_data[vip_cnt+2] <= out_data[7 : 0];
+			// vip_pixel_data[vip_cnt+0] <= img_data_in[23: 16];
+            // vip_pixel_data[vip_cnt+1] <= img_data_in[15 : 8];
+            // vip_pixel_data[vip_cnt+2] <= img_data_in[7 : 0];
         end
    end
 end

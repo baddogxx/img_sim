@@ -10,8 +10,8 @@ module connect_domain_get(
         input      [7:0]             data         ,
 
         output reg [9:0]             e_label      ,
-        output reg [8:0]             e_le         ,
-        output reg [8:0]             e_ri         ,
+        output reg [9:0]             e_le         ,
+        output reg [9:0]             e_ri         ,
         output reg [8:0]             e_upm        ,
         output reg [8:0]             e_dw         ,
         output reg [31:0]            e_sum_gray   ,
@@ -95,8 +95,8 @@ end
 
     reg [9:0]  max_label; reg start;
     reg [9:0]  label[1023:0];
-    reg [8:0]  le [1023:0];
-    reg [8:0]  ri [1023:0];
+    reg [9:0]  le [1023:0];
+    reg [9:0]  ri [1023:0];
     reg [8:0]  upm[1023:0];
     reg [8:0]  dw [1023:0];
     reg [31:0] sum_gray[1023:0];
@@ -121,6 +121,19 @@ end
         else
             start <= start;
     end
+
+
+///////
+    wire [9:0] combine1_l = (pixel_left_label < pixel_last_label[lie_cnt+1]) ? pixel_left_label : pixel_last_label[lie_cnt+1];
+    wire [9:0] combine1_b = (pixel_left_label > pixel_last_label[lie_cnt+1]) ? pixel_left_label : pixel_last_label[lie_cnt+1];
+
+    wire [9:0] combine2_l = (pixel_last_label[lie_cnt-1] < pixel_last_label[lie_cnt+1]) ? pixel_last_label[lie_cnt-1] : pixel_last_label[lie_cnt+1];
+    wire [9:0] combine2_b = (pixel_last_label[lie_cnt-1] > pixel_last_label[lie_cnt+1]) ? pixel_last_label[lie_cnt-1] : pixel_last_label[lie_cnt+1];
+
+    reg [9:0] cnt_write;
+    wire export_valid = (cnt_write>=1) && (cnt_write<=1023);
+
+        
 
     always @(posedge clk or negedge rst_n)
     begin
@@ -307,11 +320,6 @@ end
         end
     end
 
-    wire [9:0] combine1_l = (pixel_left_label < pixel_last_label[lie_cnt+1]) ? pixel_left_label : pixel_last_label[lie_cnt+1];
-    wire [9:0] combine1_b = (pixel_left_label > pixel_last_label[lie_cnt+1]) ? pixel_left_label : pixel_last_label[lie_cnt+1];
-
-    wire [9:0] combine2_l = (pixel_last_label[lie_cnt-1] < pixel_last_label[lie_cnt+1]) ? pixel_last_label[lie_cnt-1] : pixel_last_label[lie_cnt+1];
-    wire [9:0] combine2_b = (pixel_last_label[lie_cnt-1] > pixel_last_label[lie_cnt+1]) ? pixel_last_label[lie_cnt-1] : pixel_last_label[lie_cnt+1];
 
     always @(posedge clk or negedge rst_n)
     begin
@@ -331,7 +339,7 @@ end
         end
     end
 
-    reg [9:0] cnt_write;
+
 
     always @(posedge clk or negedge rst_n)
     begin
@@ -345,7 +353,7 @@ end
             cnt_write <= cnt_write ;
     end
 
-    wire export_valid = (cnt_write>=1) && (cnt_write<=1023);
+  
 
     always @(posedge clk or negedge rst_n)
     begin
