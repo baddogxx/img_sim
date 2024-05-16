@@ -7,31 +7,32 @@ module connect_domain_get(
         input                        fs           ,
         input                        hs           ,
         input                        in_valid     ,
-        input      [7:0]             data         ,
+        input                   data         ,
 
-        output reg [9:0]             e_label      ,
+        //output reg [9:0]             e_label      ,
         output reg [9:0]             e_le         ,
         output reg [9:0]             e_ri         ,
         output reg [8:0]             e_upm        ,
         output reg [8:0]             e_dw         ,
-        output reg [31:0]            e_sum_gray   ,
-        output reg [19:0]            e_num_gray
+        //output reg [31:0]            e_sum_gray   ,
+        output reg [16:0]            e_num_gray
 );
 
     parameter   HANG_NUM      = 480;
     parameter   LIE_NUM       = 640;
 //    parameter   LIE_UNVALID   = 5;
     parameter   DATA_WIDH     = 8;
-    parameter   THRES         = 135;
+    parameter   THRES         = 1;
 
-    reg [9:0] hang_cnt ,lie_cnt ; 
+    reg [8:0] hang_cnt ;
+    reg [9:0] lie_cnt ; 
     reg valid; 
     integer i;
 //    wire data_valid = (hang_cnt_out > 1) & (hang_cnt_out < HANG_NUM) & (lie_cnt_out > 1) & (lie_cnt_out < LIE_NUM);
 /////////////
 //判断当前像素在第几行 第几列
-reg [10:0] row_counter = 0;     //行计数
-reg [10:0] col_counter = 0;     //列计数
+reg [8:0] row_counter = 0;     //行计数
+reg [9:0] col_counter = 0;     //列计数
 // 内部状态，记录上一周期的同步信号状态
 reg last_fs, last_hs;
 
@@ -69,11 +70,11 @@ end
 ///////////////////////////////
     
 
-    wire [7:0] middle    ;
-    wire [7:0] left      ;
-    wire [7:0] up_right1 ;
-    wire [7:0] up_middle1;
-    wire [7:0] up_left1  ; 
+    wire  middle    ;
+    wire  left      ;
+    wire  up_right1 ;
+    wire  up_middle1;
+    wire  up_left1  ; 
     wire fs_neg,hs_neg;
 
     get_around u_get_around(
@@ -99,8 +100,8 @@ end
     reg [9:0]  ri [1023:0];
     reg [8:0]  upm[1023:0];
     reg [8:0]  dw [1023:0];
-    reg [31:0] sum_gray[1023:0];
-    reg [19:0] num_gray[1023:0];
+    //reg [31:0] sum_gray[1023:0];
+    reg [16:0] num_gray[1023:0];
     reg [9:0]  pixel_last_label[1023:0];
     reg [9:0]  pixel_last_temp [1023:0];
     reg [9:0]  pixel_left_label;
@@ -148,7 +149,7 @@ end
                 ri[i]       = 0;
                 upm[i]      = 0;
                 dw[i]       = 0;
-                sum_gray[i] = 0;
+                //sum_gray[i] = 0;
                 num_gray[i] = 0;
                 pixel_last_label[i]=0;
                 pixel_last_temp[i]=0;
@@ -168,7 +169,7 @@ end
                     upm [max_label+1]  <= hang_cnt   ;
                     dw  [max_label+1]  <= hang_cnt   ;
 
-                    sum_gray [max_label+1]  <= middle   ;
+                    //sum_gray [max_label+1]  <= middle   ;
                     num_gray [max_label+1]  <= 1   ;
 
                     pixel_left_label <= 1;
@@ -186,7 +187,7 @@ end
                         upm[combine1_l] <= (upm[combine1_l] < upm[combine1_b])?upm[combine1_l]:upm[combine1_b];
                         dw[combine1_l] <= hang_cnt;
 
-                        sum_gray[combine1_l] <= sum_gray[combine1_l] + sum_gray[combine1_b] + middle;
+                        //sum_gray[combine1_l] <= sum_gray[combine1_l] + sum_gray[combine1_b] + middle;
                         num_gray[combine1_l] <= num_gray[combine1_l] + num_gray[combine1_b] + 1;
                         num_gray[combine1_b] <= 0;
 
@@ -208,7 +209,7 @@ end
                         upm[combine2_l] <= (upm[combine2_l] < upm[combine2_b])?upm[combine2_l]:upm[combine2_b];
                         dw[combine2_l] <= hang_cnt;
 
-                        sum_gray[combine2_l] <= sum_gray[combine2_l] + sum_gray[combine2_b] + middle;
+                        //sum_gray[combine2_l] <= sum_gray[combine2_l] + sum_gray[combine2_b] + middle;
                         num_gray[combine2_l] <= num_gray[combine2_l] + num_gray[combine2_b] + 1;
                         num_gray[combine2_b] <= 0;
 
@@ -245,7 +246,7 @@ end
                                     upm    [max_label+1]  <= hang_cnt   ;
                                     dw  [max_label+1]  <= hang_cnt   ;
 
-                                    sum_gray     [max_label+1]  <= middle   ;
+                                    //sum_gray     [max_label+1]  <= middle   ;
                                     num_gray     [max_label+1]  <= 1   ;
 
                                     pixel_left_label <= max_label+1;
@@ -255,7 +256,7 @@ end
                                 begin
                                     dw[pixel_last_label[lie_cnt+1]]  <= hang_cnt   ;
                                     le[pixel_last_label[lie_cnt+1]]  <= (lie_cnt < le[pixel_last_label[lie_cnt+1]])?lie_cnt:le[pixel_last_label[lie_cnt+1]];
-                                    sum_gray[pixel_last_label[lie_cnt+1]]  <= sum_gray[pixel_last_label[lie_cnt+1]] + middle;
+                                    //sum_gray[pixel_last_label[lie_cnt+1]]  <= sum_gray[pixel_last_label[lie_cnt+1]] + middle;
                                     num_gray[pixel_last_label[lie_cnt+1]]  <= num_gray[pixel_last_label[lie_cnt+1]] + 1;
 
                                     pixel_left_label <= pixel_last_label[lie_cnt+1];
@@ -265,7 +266,7 @@ end
                             else
                             begin
                                 dw[pixel_last_label[lie_cnt]]  <= hang_cnt   ;
-                                sum_gray[pixel_last_label[lie_cnt]]  <= sum_gray[pixel_last_label[lie_cnt]] + middle;
+                                //sum_gray[pixel_last_label[lie_cnt]]  <= sum_gray[pixel_last_label[lie_cnt]] + middle;
                                 num_gray[pixel_last_label[lie_cnt]]  <= num_gray[pixel_last_label[lie_cnt]] + 1;
 
                                 pixel_left_label <= pixel_last_label[lie_cnt];
@@ -276,7 +277,7 @@ end
                         begin
                             dw[pixel_last_label[lie_cnt-1]]  <= hang_cnt   ;
                             ri[pixel_last_label[lie_cnt-1]]  <= (lie_cnt>ri[pixel_last_label[lie_cnt-1]])?lie_cnt:ri[pixel_last_label[lie_cnt-1]];
-                            sum_gray[pixel_last_label[lie_cnt-1]]  <= sum_gray[pixel_last_label[lie_cnt-1]] + middle;
+                            //sum_gray[pixel_last_label[lie_cnt-1]]  <= sum_gray[pixel_last_label[lie_cnt-1]] + middle;
                             num_gray[pixel_last_label[lie_cnt-1]]  <= num_gray[pixel_last_label[lie_cnt-1]] + 1;
 
                             pixel_left_label <= pixel_last_label[lie_cnt-1];
@@ -286,7 +287,7 @@ end
                     else
                     begin
                         ri[pixel_left_label]  <= (lie_cnt>ri[pixel_left_label])?lie_cnt:ri[pixel_left_label];
-                        sum_gray[pixel_left_label]  <= sum_gray[pixel_left_label] + middle;
+                        //sum_gray[pixel_left_label]  <= sum_gray[pixel_left_label] + middle;
                         num_gray[pixel_left_label]  <= num_gray[pixel_left_label] + 1;
 
                         pixel_left_label <= pixel_left_label;
@@ -311,7 +312,7 @@ end
              ri[cnt_write]        <= 0 ;
              upm[cnt_write]       <= 0 ;
              dw[cnt_write]        <= 0 ;
-             sum_gray[cnt_write]  <= 0 ;
+             //sum_gray[cnt_write]  <= 0 ;
              num_gray[cnt_write]  <= 0 ;
         end
         else
@@ -359,32 +360,32 @@ end
     begin
         if(rst_n==1'b0)
         begin
-            e_label       <=   0;
+            //e_label       <=   0;
             e_le          <=   0;
             e_ri          <=   0;
             e_upm         <=   0;
             e_dw          <=   0;
-            e_sum_gray    <=   0;
+            //e_sum_gray    <=   0;
             e_num_gray    <=   0;
         end
         else if(export_valid==1)
         begin
-            e_label       <= label[cnt_write];
+            //e_label       <= label[cnt_write];
             e_le          <= le[cnt_write];
             e_ri          <= ri[cnt_write];
             e_upm         <= upm[cnt_write];
             e_dw          <= dw[cnt_write];
-            e_sum_gray    <= sum_gray[cnt_write];
+            //e_sum_gray    <= sum_gray[cnt_write];
             e_num_gray    <= num_gray[cnt_write];
         end
         else
         begin
-            e_label       <=   0;
+            //e_label       <=   0;
             e_le          <=   0;
             e_ri          <=   0;
             e_upm         <=   0;
             e_dw          <=   0;
-            e_sum_gray    <=   0;
+            //e_sum_gray    <=   0;
             e_num_gray    <=   0;
         end
     end

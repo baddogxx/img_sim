@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='E:/git_repositories/img_sim/img_sim/img_sim/img_sim.runs/delay_1hang_synth_1'
+HD_PWD='C:/Users/baddog/Desktop/img_sim_fast/img_sim_fast/img_sim/img_sim/img_sim.runs/delay_1hang_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

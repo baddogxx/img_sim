@@ -35,8 +35,8 @@ wire   [8:0]   in_up           ;    // 上边界输入
 wire   [8:0]   in_down         ;    // 下边界输入
 wire   [9:0]   in_left         ;    // 左边界输入
 wire   [9:0]   in_right        ;    // 右边界输入
-wire   [19:0]  pixel_num       ;    // 像素数量
-wire   [7:0]   label           ;
+wire   [16:0]  pixel_num       ;    // 像素数量
+//wire   [7:0]   label           ;
 
 connect_domain_get u_connect_domain_get(
     .clk        (clk        ),
@@ -45,14 +45,14 @@ connect_domain_get u_connect_domain_get(
     .fs         (tem_vsync  ),
     .hs         (tem_href   ),
     .in_valid   (tem_valid  ),
-    .data       (tem_data   ),
+    .data       (tem_data[0]   ),
 
     .e_le       (in_left    ),
     .e_ri       (in_right   ),
     .e_upm      (in_up      ),
     .e_dw       (in_down    ),
 
-    .e_label    (label      ),
+    //.e_label    (label      ),
     .e_num_gray (pixel_num  )
 );
 
@@ -115,10 +115,10 @@ always @(posedge clk or negedge rst_n) begin
             // 更新最大像素数量
             max_pixel_num <= pixel_num;
             // 更新输出边界
-            out_up      <= 480 - in_down;             //行计数方向反了，这里反向一下
-            out_dowm    <= 480 - in_up;
-            // out_up      <= in_up;             
-            // out_dowm    <= in_down;
+//            out_up      <= 480 - in_down;             //行计数方向反了，这里反向一下
+//            out_dowm    <= 480 - in_up;
+             out_up      <= in_up;             
+             out_dowm    <= in_down;
             out_left    <= in_left;
             out_right   <= in_right;
         end
@@ -126,14 +126,14 @@ always @(posedge clk or negedge rst_n) begin
 end
 
 // 计算中心点坐标
-    // (0,0) _________________________>X(列 0-639)
+    //   Y（行 0-479）_________________________
     //      |                      |
     //      |                      |
     //      |                      |
     //      |                      |
     //      |                      |
-    //      |______________________|
-    //      | Y（行 0-479）
+    // (0,0)|______________________|>X(列 0-639)
+    //      |
 
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
@@ -152,10 +152,10 @@ always @(posedge clk or negedge rst_n) begin
         out_data  <= 24'b0;
     end 
 
-        // assign out_up    = 180 - 80;      //调试用
-        // assign out_dowm  = 380 - 80;
-        // assign out_left  = 341;
-        // assign out_right = 540;
+         assign out_up    = 100;      //调试用
+         assign out_dowm  = 300;
+         assign out_left  = 341;
+         assign out_right = 540;
 
         // assign out_up    = 100;      //调试用
         // assign out_dowm  = 200;
@@ -177,7 +177,7 @@ always @(posedge clk or negedge rst_n) begin
             out_data <= 24'h0000FF;     //输出红色像素
         end
 
-        else if ((lie_cnt == 440) && (hang_cnt == 200)) begin
+        else if ((lie_cnt == center_x) && (hang_cnt == center_y)) begin
             out_data <= 24'h0000FF;     //输出红色像素
         end
 

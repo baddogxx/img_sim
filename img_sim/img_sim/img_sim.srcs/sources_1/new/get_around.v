@@ -6,13 +6,13 @@ module get_around(
 
         input                    fs           ,
         input                    hs           ,
-        input  [7:0]             data         , 
+        input                    data         , 
 
-        output [7:0]             middle       ,
-        output [7:0]             left         ,
-        output [7:0]             up_right1    ,
-        output [7:0]             up_middle1   ,
-        output [7:0]             up_left1     ,
+        output                   middle       ,
+        output                   left         ,
+        output                   up_right1    ,
+        output                   up_middle1   ,
+        output                   up_left1     ,
         output                   fs_neg       ,     //下降沿输出
         output                   hs_neg
     );
@@ -90,7 +90,7 @@ module get_around(
     end
 
     wire rden = rden0 | rden1;
-    wire [7:0] data_delay_1hang;
+    wire  data_delay_1hang;
 
     delay_1hang u_delay_1hang (
       .clka  ( clk                ),    //时钟
@@ -105,12 +105,12 @@ module get_around(
       .doutb ( data_delay_1hang   )     //读数据端口
     );
 
-    wire [7:0] up_middle1_temp = (rden2==1) ? data_delay_1hang:0;   //rom读操作有效，取出上一行像素
+    wire  up_middle1_temp = (rden2==1) ? data_delay_1hang:0;   //rom读操作有效，取出上一行像素
 
-    wire [7:0] middle_temp = data;                                  //输入像素数据作为暂时的中间像素
+    wire  middle_temp = data;                                  //输入像素数据作为暂时的中间像素
 
     //左和左上像素
-    reg  [7:0] left_temp,left_temp1,up_left1_temp,up_left1_temp1;
+    reg   left_temp,left_temp1,up_left1_temp,up_left1_temp1;
     always @(posedge clk )
     begin
         left_temp  <= middle_temp;

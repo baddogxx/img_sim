@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Sun May 12 10:16:30 2024
+-- Date        : Thu May 16 09:34:38 2024
 -- Host        : DESKTOP12700 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               e:/git_repositories/img_sim/img_sim/img_sim/img_sim.srcs/sources_1/ip/delay_1hang/delay_1hang_sim_netlist.vhdl
+--               C:/Users/baddog/Desktop/img_sim_fast/img_sim_fast/img_sim/img_sim/img_sim.srcs/sources_1/ip/delay_1hang/delay_1hang_sim_netlist.vhdl
 -- Design      : delay_1hang
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -16,14 +16,14 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity delay_1hang_blk_mem_gen_prim_wrapper is
   port (
-    doutb : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    doutb : out STD_LOGIC_VECTOR ( 0 to 0 );
     clka : in STD_LOGIC;
     clkb : in STD_LOGIC;
     ena : in STD_LOGIC;
     enb : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 9 downto 0 );
     addrb : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    dina : in STD_LOGIC_VECTOR ( 0 to 0 );
     wea : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
@@ -35,10 +35,17 @@ architecture STRUCTURE of delay_1hang_blk_mem_gen_prim_wrapper is
   signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_17\ : STD_LOGIC;
   signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_18\ : STD_LOGIC;
   signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_19\ : STD_LOGIC;
+  signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_20\ : STD_LOGIC;
+  signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_21\ : STD_LOGIC;
+  signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_22\ : STD_LOGIC;
+  signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_23\ : STD_LOGIC;
   signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_24\ : STD_LOGIC;
   signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_25\ : STD_LOGIC;
   signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_26\ : STD_LOGIC;
   signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_27\ : STD_LOGIC;
+  signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_28\ : STD_LOGIC;
+  signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_29\ : STD_LOGIC;
+  signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_30\ : STD_LOGIC;
   signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_34\ : STD_LOGIC;
   signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_35\ : STD_LOGIC;
   signal \NLW_DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_DOADO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -143,8 +150,8 @@ begin
       SIM_DEVICE => "7SERIES",
       SRVAL_A => X"00000",
       SRVAL_B => X"00000",
-      WRITE_MODE_A => "WRITE_FIRST",
-      WRITE_MODE_B => "WRITE_FIRST",
+      WRITE_MODE_A => "NO_CHANGE",
+      WRITE_MODE_B => "NO_CHANGE",
       WRITE_WIDTH_A => 18,
       WRITE_WIDTH_B => 18
     )
@@ -155,10 +162,8 @@ begin
       ADDRBWRADDR(3 downto 0) => B"0000",
       CLKARDCLK => clka,
       CLKBWRCLK => clkb,
-      DIADI(15 downto 12) => B"0000",
-      DIADI(11 downto 8) => dina(7 downto 4),
-      DIADI(7 downto 4) => B"0000",
-      DIADI(3 downto 0) => dina(3 downto 0),
+      DIADI(15 downto 1) => B"000000000000000",
+      DIADI(0) => dina(0),
       DIBDI(15 downto 0) => B"0000000000000000",
       DIPADIP(1 downto 0) => B"00",
       DIPBDIP(1 downto 0) => B"00",
@@ -167,12 +172,18 @@ begin
       DOBDO(14) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_17\,
       DOBDO(13) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_18\,
       DOBDO(12) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_19\,
-      DOBDO(11 downto 8) => doutb(7 downto 4),
+      DOBDO(11) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_20\,
+      DOBDO(10) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_21\,
+      DOBDO(9) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_22\,
+      DOBDO(8) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_23\,
       DOBDO(7) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_24\,
       DOBDO(6) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_25\,
       DOBDO(5) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_26\,
       DOBDO(4) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_27\,
-      DOBDO(3 downto 0) => doutb(3 downto 0),
+      DOBDO(3) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_28\,
+      DOBDO(2) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_29\,
+      DOBDO(1) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_30\,
+      DOBDO(0) => doutb(0),
       DOPADOP(1 downto 0) => \NLW_DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_DOPADOP_UNCONNECTED\(1 downto 0),
       DOPBDOP(1) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_34\,
       DOPBDOP(0) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram_n_35\,
@@ -195,14 +206,14 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity delay_1hang_blk_mem_gen_prim_width is
   port (
-    doutb : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    doutb : out STD_LOGIC_VECTOR ( 0 to 0 );
     clka : in STD_LOGIC;
     clkb : in STD_LOGIC;
     ena : in STD_LOGIC;
     enb : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 9 downto 0 );
     addrb : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    dina : in STD_LOGIC_VECTOR ( 0 to 0 );
     wea : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
@@ -217,8 +228,8 @@ begin
       addrb(9 downto 0) => addrb(9 downto 0),
       clka => clka,
       clkb => clkb,
-      dina(7 downto 0) => dina(7 downto 0),
-      doutb(7 downto 0) => doutb(7 downto 0),
+      dina(0) => dina(0),
+      doutb(0) => doutb(0),
       ena => ena,
       enb => enb,
       wea(0) => wea(0)
@@ -230,14 +241,14 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity delay_1hang_blk_mem_gen_generic_cstr is
   port (
-    doutb : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    doutb : out STD_LOGIC_VECTOR ( 0 to 0 );
     clka : in STD_LOGIC;
     clkb : in STD_LOGIC;
     ena : in STD_LOGIC;
     enb : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 9 downto 0 );
     addrb : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    dina : in STD_LOGIC_VECTOR ( 0 to 0 );
     wea : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
@@ -252,8 +263,8 @@ begin
       addrb(9 downto 0) => addrb(9 downto 0),
       clka => clka,
       clkb => clkb,
-      dina(7 downto 0) => dina(7 downto 0),
-      doutb(7 downto 0) => doutb(7 downto 0),
+      dina(0) => dina(0),
+      doutb(0) => doutb(0),
       ena => ena,
       enb => enb,
       wea(0) => wea(0)
@@ -265,14 +276,14 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity delay_1hang_blk_mem_gen_top is
   port (
-    doutb : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    doutb : out STD_LOGIC_VECTOR ( 0 to 0 );
     clka : in STD_LOGIC;
     clkb : in STD_LOGIC;
     ena : in STD_LOGIC;
     enb : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 9 downto 0 );
     addrb : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    dina : in STD_LOGIC_VECTOR ( 0 to 0 );
     wea : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
@@ -287,8 +298,8 @@ begin
       addrb(9 downto 0) => addrb(9 downto 0),
       clka => clka,
       clkb => clkb,
-      dina(7 downto 0) => dina(7 downto 0),
-      doutb(7 downto 0) => doutb(7 downto 0),
+      dina(0) => dina(0),
+      doutb(0) => doutb(0),
       ena => ena,
       enb => enb,
       wea(0) => wea(0)
@@ -300,14 +311,14 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity delay_1hang_blk_mem_gen_v8_4_2_synth is
   port (
-    doutb : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    doutb : out STD_LOGIC_VECTOR ( 0 to 0 );
     clka : in STD_LOGIC;
     clkb : in STD_LOGIC;
     ena : in STD_LOGIC;
     enb : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 9 downto 0 );
     addrb : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    dina : in STD_LOGIC_VECTOR ( 0 to 0 );
     wea : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
@@ -322,8 +333,8 @@ begin
       addrb(9 downto 0) => addrb(9 downto 0),
       clka => clka,
       clkb => clkb,
-      dina(7 downto 0) => dina(7 downto 0),
-      doutb(7 downto 0) => doutb(7 downto 0),
+      dina(0) => dina(0),
+      doutb(0) => doutb(0),
       ena => ena,
       enb => enb,
       wea(0) => wea(0)
@@ -341,16 +352,16 @@ entity delay_1hang_blk_mem_gen_v8_4_2 is
     regcea : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     addra : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    douta : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    dina : in STD_LOGIC_VECTOR ( 0 to 0 );
+    douta : out STD_LOGIC_VECTOR ( 0 to 0 );
     clkb : in STD_LOGIC;
     rstb : in STD_LOGIC;
     enb : in STD_LOGIC;
     regceb : in STD_LOGIC;
     web : in STD_LOGIC_VECTOR ( 0 to 0 );
     addrb : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    dinb : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    doutb : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    dinb : in STD_LOGIC_VECTOR ( 0 to 0 );
+    doutb : out STD_LOGIC_VECTOR ( 0 to 0 );
     injectsbiterr : in STD_LOGIC;
     injectdbiterr : in STD_LOGIC;
     eccpipece : in STD_LOGIC;
@@ -371,7 +382,7 @@ entity delay_1hang_blk_mem_gen_v8_4_2 is
     s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_awvalid : in STD_LOGIC;
     s_axi_awready : out STD_LOGIC;
-    s_axi_wdata : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    s_axi_wdata : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_wstrb : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_wlast : in STD_LOGIC;
     s_axi_wvalid : in STD_LOGIC;
@@ -388,7 +399,7 @@ entity delay_1hang_blk_mem_gen_v8_4_2 is
     s_axi_arvalid : in STD_LOGIC;
     s_axi_arready : out STD_LOGIC;
     s_axi_rid : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_rdata : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    s_axi_rdata : out STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rlast : out STD_LOGIC;
     s_axi_rvalid : out STD_LOGIC;
@@ -446,7 +457,7 @@ entity delay_1hang_blk_mem_gen_v8_4_2 is
   attribute C_EN_SLEEP_PIN : integer;
   attribute C_EN_SLEEP_PIN of delay_1hang_blk_mem_gen_v8_4_2 : entity is 0;
   attribute C_EST_POWER_SUMMARY : string;
-  attribute C_EST_POWER_SUMMARY of delay_1hang_blk_mem_gen_v8_4_2 : entity is "Estimated Power for IP     :     2.54005 mW";
+  attribute C_EST_POWER_SUMMARY of delay_1hang_blk_mem_gen_v8_4_2 : entity is "Estimated Power for IP     :     1.918297 mW";
   attribute C_FAMILY : string;
   attribute C_FAMILY of delay_1hang_blk_mem_gen_v8_4_2 : entity is "zynq";
   attribute C_HAS_AXI_ID : integer;
@@ -504,9 +515,9 @@ entity delay_1hang_blk_mem_gen_v8_4_2 is
   attribute C_READ_LATENCY_B : integer;
   attribute C_READ_LATENCY_B of delay_1hang_blk_mem_gen_v8_4_2 : entity is 1;
   attribute C_READ_WIDTH_A : integer;
-  attribute C_READ_WIDTH_A of delay_1hang_blk_mem_gen_v8_4_2 : entity is 8;
+  attribute C_READ_WIDTH_A of delay_1hang_blk_mem_gen_v8_4_2 : entity is 1;
   attribute C_READ_WIDTH_B : integer;
-  attribute C_READ_WIDTH_B of delay_1hang_blk_mem_gen_v8_4_2 : entity is 8;
+  attribute C_READ_WIDTH_B of delay_1hang_blk_mem_gen_v8_4_2 : entity is 1;
   attribute C_RSTRAM_A : integer;
   attribute C_RSTRAM_A of delay_1hang_blk_mem_gen_v8_4_2 : entity is 0;
   attribute C_RSTRAM_B : integer;
@@ -540,13 +551,13 @@ entity delay_1hang_blk_mem_gen_v8_4_2 is
   attribute C_WRITE_DEPTH_B : integer;
   attribute C_WRITE_DEPTH_B of delay_1hang_blk_mem_gen_v8_4_2 : entity is 1024;
   attribute C_WRITE_MODE_A : string;
-  attribute C_WRITE_MODE_A of delay_1hang_blk_mem_gen_v8_4_2 : entity is "WRITE_FIRST";
+  attribute C_WRITE_MODE_A of delay_1hang_blk_mem_gen_v8_4_2 : entity is "NO_CHANGE";
   attribute C_WRITE_MODE_B : string;
   attribute C_WRITE_MODE_B of delay_1hang_blk_mem_gen_v8_4_2 : entity is "WRITE_FIRST";
   attribute C_WRITE_WIDTH_A : integer;
-  attribute C_WRITE_WIDTH_A of delay_1hang_blk_mem_gen_v8_4_2 : entity is 8;
+  attribute C_WRITE_WIDTH_A of delay_1hang_blk_mem_gen_v8_4_2 : entity is 1;
   attribute C_WRITE_WIDTH_B : integer;
-  attribute C_WRITE_WIDTH_B of delay_1hang_blk_mem_gen_v8_4_2 : entity is 8;
+  attribute C_WRITE_WIDTH_B of delay_1hang_blk_mem_gen_v8_4_2 : entity is 1;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of delay_1hang_blk_mem_gen_v8_4_2 : entity is "zynq";
   attribute ORIG_REF_NAME : string;
@@ -559,13 +570,6 @@ architecture STRUCTURE of delay_1hang_blk_mem_gen_v8_4_2 is
   signal \<const0>\ : STD_LOGIC;
 begin
   dbiterr <= \<const0>\;
-  douta(7) <= \<const0>\;
-  douta(6) <= \<const0>\;
-  douta(5) <= \<const0>\;
-  douta(4) <= \<const0>\;
-  douta(3) <= \<const0>\;
-  douta(2) <= \<const0>\;
-  douta(1) <= \<const0>\;
   douta(0) <= \<const0>\;
   rdaddrecc(9) <= \<const0>\;
   rdaddrecc(8) <= \<const0>\;
@@ -599,13 +603,6 @@ begin
   s_axi_rdaddrecc(2) <= \<const0>\;
   s_axi_rdaddrecc(1) <= \<const0>\;
   s_axi_rdaddrecc(0) <= \<const0>\;
-  s_axi_rdata(7) <= \<const0>\;
-  s_axi_rdata(6) <= \<const0>\;
-  s_axi_rdata(5) <= \<const0>\;
-  s_axi_rdata(4) <= \<const0>\;
-  s_axi_rdata(3) <= \<const0>\;
-  s_axi_rdata(2) <= \<const0>\;
-  s_axi_rdata(1) <= \<const0>\;
   s_axi_rdata(0) <= \<const0>\;
   s_axi_rid(3) <= \<const0>\;
   s_axi_rid(2) <= \<const0>\;
@@ -628,8 +625,8 @@ inst_blk_mem_gen: entity work.delay_1hang_blk_mem_gen_v8_4_2_synth
       addrb(9 downto 0) => addrb(9 downto 0),
       clka => clka,
       clkb => clkb,
-      dina(7 downto 0) => dina(7 downto 0),
-      doutb(7 downto 0) => doutb(7 downto 0),
+      dina(0) => dina(0),
+      doutb(0) => doutb(0),
       ena => ena,
       enb => enb,
       wea(0) => wea(0)
@@ -645,11 +642,11 @@ entity delay_1hang is
     ena : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     addra : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    dina : in STD_LOGIC_VECTOR ( 0 to 0 );
     clkb : in STD_LOGIC;
     enb : in STD_LOGIC;
     addrb : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    doutb : out STD_LOGIC_VECTOR ( 7 downto 0 )
+    doutb : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of delay_1hang : entity is true;
@@ -674,12 +671,12 @@ architecture STRUCTURE of delay_1hang is
   signal NLW_U0_s_axi_sbiterr_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_s_axi_wready_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_sbiterr_UNCONNECTED : STD_LOGIC;
-  signal NLW_U0_douta_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal NLW_U0_douta_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_U0_rdaddrecc_UNCONNECTED : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal NLW_U0_s_axi_bid_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_U0_s_axi_bresp_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_U0_s_axi_rdaddrecc_UNCONNECTED : STD_LOGIC_VECTOR ( 9 downto 0 );
-  signal NLW_U0_s_axi_rdata_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal NLW_U0_s_axi_rdata_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_U0_s_axi_rid_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_U0_s_axi_rresp_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   attribute C_ADDRA_WIDTH : integer;
@@ -729,7 +726,7 @@ architecture STRUCTURE of delay_1hang is
   attribute C_EN_SLEEP_PIN : integer;
   attribute C_EN_SLEEP_PIN of U0 : label is 0;
   attribute C_EST_POWER_SUMMARY : string;
-  attribute C_EST_POWER_SUMMARY of U0 : label is "Estimated Power for IP     :     2.54005 mW";
+  attribute C_EST_POWER_SUMMARY of U0 : label is "Estimated Power for IP     :     1.918297 mW";
   attribute C_FAMILY : string;
   attribute C_FAMILY of U0 : label is "zynq";
   attribute C_HAS_AXI_ID : integer;
@@ -787,9 +784,9 @@ architecture STRUCTURE of delay_1hang is
   attribute C_READ_LATENCY_B : integer;
   attribute C_READ_LATENCY_B of U0 : label is 1;
   attribute C_READ_WIDTH_A : integer;
-  attribute C_READ_WIDTH_A of U0 : label is 8;
+  attribute C_READ_WIDTH_A of U0 : label is 1;
   attribute C_READ_WIDTH_B : integer;
-  attribute C_READ_WIDTH_B of U0 : label is 8;
+  attribute C_READ_WIDTH_B of U0 : label is 1;
   attribute C_RSTRAM_A : integer;
   attribute C_RSTRAM_A of U0 : label is 0;
   attribute C_RSTRAM_B : integer;
@@ -823,13 +820,13 @@ architecture STRUCTURE of delay_1hang is
   attribute C_WRITE_DEPTH_B : integer;
   attribute C_WRITE_DEPTH_B of U0 : label is 1024;
   attribute C_WRITE_MODE_A : string;
-  attribute C_WRITE_MODE_A of U0 : label is "WRITE_FIRST";
+  attribute C_WRITE_MODE_A of U0 : label is "NO_CHANGE";
   attribute C_WRITE_MODE_B : string;
   attribute C_WRITE_MODE_B of U0 : label is "WRITE_FIRST";
   attribute C_WRITE_WIDTH_A : integer;
-  attribute C_WRITE_WIDTH_A of U0 : label is 8;
+  attribute C_WRITE_WIDTH_A of U0 : label is 1;
   attribute C_WRITE_WIDTH_B : integer;
-  attribute C_WRITE_WIDTH_B of U0 : label is 8;
+  attribute C_WRITE_WIDTH_B of U0 : label is 1;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of U0 : label is "zynq";
   attribute downgradeipidentifiedwarnings of U0 : label is "yes";
@@ -855,10 +852,10 @@ U0: entity work.delay_1hang_blk_mem_gen_v8_4_2
       clkb => clkb,
       dbiterr => NLW_U0_dbiterr_UNCONNECTED,
       deepsleep => '0',
-      dina(7 downto 0) => dina(7 downto 0),
-      dinb(7 downto 0) => B"00000000",
-      douta(7 downto 0) => NLW_U0_douta_UNCONNECTED(7 downto 0),
-      doutb(7 downto 0) => doutb(7 downto 0),
+      dina(0) => dina(0),
+      dinb(0) => '0',
+      douta(0) => NLW_U0_douta_UNCONNECTED(0),
+      doutb(0) => doutb(0),
       eccpipece => '0',
       ena => ena,
       enb => enb,
@@ -895,14 +892,14 @@ U0: entity work.delay_1hang_blk_mem_gen_v8_4_2
       s_axi_injectdbiterr => '0',
       s_axi_injectsbiterr => '0',
       s_axi_rdaddrecc(9 downto 0) => NLW_U0_s_axi_rdaddrecc_UNCONNECTED(9 downto 0),
-      s_axi_rdata(7 downto 0) => NLW_U0_s_axi_rdata_UNCONNECTED(7 downto 0),
+      s_axi_rdata(0) => NLW_U0_s_axi_rdata_UNCONNECTED(0),
       s_axi_rid(3 downto 0) => NLW_U0_s_axi_rid_UNCONNECTED(3 downto 0),
       s_axi_rlast => NLW_U0_s_axi_rlast_UNCONNECTED,
       s_axi_rready => '0',
       s_axi_rresp(1 downto 0) => NLW_U0_s_axi_rresp_UNCONNECTED(1 downto 0),
       s_axi_rvalid => NLW_U0_s_axi_rvalid_UNCONNECTED,
       s_axi_sbiterr => NLW_U0_s_axi_sbiterr_UNCONNECTED,
-      s_axi_wdata(7 downto 0) => B"00000000",
+      s_axi_wdata(0) => '0',
       s_axi_wlast => '0',
       s_axi_wready => NLW_U0_s_axi_wready_UNCONNECTED,
       s_axi_wstrb(0) => '0',
