@@ -76,29 +76,29 @@ im2bw ins_im2bw(
 );
 
 
-//最大连通域标记
-max_domain u_max_domain(
-    .clk       (clk       ),
-    .rst_n     (rst_n     ),
+ //最大连通域标记
+ max_domain u_max_domain(
+     .clk       (clk       ),
+     .rst_n     (rst_n     ),
 
-    .tem_vsync (bw_vsync ),       //开运算结果送入连通检测模块
-    .tem_href  (bw_clken  ),       
-    .tem_valid (bw_valid ),       
-    .tem_data  (bw_data  ),       
+     .tem_vsync (bw_vsync ),       //开运算结果送入连通检测模块
+     .tem_href  (bw_clken  ),       
+     .tem_valid (bw_valid ),       
+     .tem_data  (bw_data  ),       
 
-    .in_vsync  (yuv_vsync ),        //待叠加的灰度图像输入
-    .in_valid  (yuv_valid ),
-    .in_href   (yuv_clken ),
-    .in_data   (gray_data ),
+     .in_vsync  (yuv_vsync ),        //待叠加的灰度图像输入
+     .in_valid  (yuv_valid ),
+     .in_href   (yuv_clken ),
+     .in_data   (gray_data ),
 
-    .out_vsync (add_vsync ),
-    .out_valid (add_valid ),
-    .out_href  (add_href  ),
-    .out_data  (add_data  ),
+     .out_vsync (add_vsync ),
+     .out_valid (add_valid ),
+     .out_href  (add_href  ),
+     .out_data  (add_data  ),
 
-    .center_x  (center_x  ),
-    .center_y  (center_y  )
-);
+     .center_x  (center_x  ),
+     .center_y  (center_y  )
+ );
 
 
 

@@ -11,12 +11,12 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="16800270833334fs"></ZoomStartTime>
-      <ZoomEndTime time="16801525833335fs"></ZoomEndTime>
-      <Cursor1Time time="16800833833000fs"></Cursor1Time>
+      <ZoomStartTime time="17158560000000fs"></ZoomStartTime>
+      <ZoomEndTime time="38428560000001fs"></ZoomEndTime>
+      <Cursor1Time time="25568560000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="228"></NameColumnWidth>
+      <NameColumnWidth column_width="210"></NameColumnWidth>
       <ValueColumnWidth column_width="90"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="15" />
@@ -28,56 +28,56 @@
       <obj_property name="ElementShortName">rst_n</obj_property>
       <obj_property name="ObjectShortName">rst_n</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/u_connect_domain_get/hang_cnt" type="array">
-      <obj_property name="ElementShortName">hang_cnt[8:0]</obj_property>
-      <obj_property name="ObjectShortName">hang_cnt[8:0]</obj_property>
+   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/u_image_boundary_detector/last_fs" type="logic">
+      <obj_property name="ElementShortName">last_fs</obj_property>
+      <obj_property name="ObjectShortName">last_fs</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/u_connect_domain_get/lie_cnt" type="array">
-      <obj_property name="ElementShortName">lie_cnt[9:0]</obj_property>
-      <obj_property name="ObjectShortName">lie_cnt[9:0]</obj_property>
+   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/u_image_boundary_detector/last_hs" type="logic">
+      <obj_property name="ElementShortName">last_hs</obj_property>
+      <obj_property name="ObjectShortName">last_hs</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/u_connect_domain_get/row_counter" type="array">
-      <obj_property name="ElementShortName">row_counter[8:0]</obj_property>
-      <obj_property name="ObjectShortName">row_counter[8:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/u_connect_domain_get/col_counter" type="array">
+   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/u_image_boundary_detector/col_counter" type="array">
       <obj_property name="ElementShortName">col_counter[9:0]</obj_property>
       <obj_property name="ObjectShortName">col_counter[9:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/in_up" type="array">
-      <obj_property name="ElementShortName">in_up[8:0]</obj_property>
-      <obj_property name="ObjectShortName">in_up[8:0]</obj_property>
+   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/u_image_boundary_detector/row_counter" type="array">
+      <obj_property name="ElementShortName">row_counter[8:0]</obj_property>
+      <obj_property name="ObjectShortName">row_counter[8:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/in_down" type="array">
-      <obj_property name="ElementShortName">in_down[8:0]</obj_property>
-      <obj_property name="ObjectShortName">in_down[8:0]</obj_property>
+   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/TOP" type="array">
+      <obj_property name="ElementShortName">TOP[31:0]</obj_property>
+      <obj_property name="ObjectShortName">TOP[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/in_left" type="array">
-      <obj_property name="ElementShortName">in_left[9:0]</obj_property>
-      <obj_property name="ObjectShortName">in_left[9:0]</obj_property>
+   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/BOTTOM" type="array">
+      <obj_property name="ElementShortName">BOTTOM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">BOTTOM[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/in_right" type="array">
-      <obj_property name="ElementShortName">in_right[9:0]</obj_property>
-      <obj_property name="ObjectShortName">in_right[9:0]</obj_property>
+   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/LEFT" type="array">
+      <obj_property name="ElementShortName">LEFT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">LEFT[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/pixel_num" type="array">
-      <obj_property name="ElementShortName">pixel_num[16:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_num[16:0]</obj_property>
+   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/RIGHT" type="array">
+      <obj_property name="ElementShortName">RIGHT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RIGHT[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/out_up" type="array">
-      <obj_property name="ElementShortName">out_up[8:0]</obj_property>
-      <obj_property name="ObjectShortName">out_up[8:0]</obj_property>
+   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/boarder_flag" type="logic">
+      <obj_property name="ElementShortName">boarder_flag</obj_property>
+      <obj_property name="ObjectShortName">boarder_flag</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/out_dowm" type="array">
-      <obj_property name="ElementShortName">out_dowm[8:0]</obj_property>
-      <obj_property name="ObjectShortName">out_dowm[8:0]</obj_property>
+   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/in_vsync" type="logic">
+      <obj_property name="ElementShortName">in_vsync</obj_property>
+      <obj_property name="ObjectShortName">in_vsync</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/out_left" type="array">
-      <obj_property name="ElementShortName">out_left[9:0]</obj_property>
-      <obj_property name="ObjectShortName">out_left[9:0]</obj_property>
+   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/in_valid" type="logic">
+      <obj_property name="ElementShortName">in_valid</obj_property>
+      <obj_property name="ObjectShortName">in_valid</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/out_right" type="array">
-      <obj_property name="ElementShortName">out_right[9:0]</obj_property>
-      <obj_property name="ObjectShortName">out_right[9:0]</obj_property>
+   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/in_data" type="array">
+      <obj_property name="ElementShortName">in_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">in_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/u_img_pro/u_max_domain/out_data" type="array">
+      <obj_property name="ElementShortName">out_data[23:0]</obj_property>
+      <obj_property name="ObjectShortName">out_data[23:0]</obj_property>
    </wvobject>
 </wave_config>
